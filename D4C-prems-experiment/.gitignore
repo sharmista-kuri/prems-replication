@@ -1,0 +1,56 @@
+# === OS FILES ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === EDITORS & IDEs ===
+.vscode/
+.idea/
+*.swp
+*~
+
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === LARGE / GENERATED FOLDERS ===
+csv/
+python_files/
+d4c_buggy/
+d4c_workdirs/
+debug_lang11_pit/
+jacoco_reports/
+jacoco_workdirs/
+jacoco_workdirs_fix/
+pipeline_logs/
+
+# === DATA FILES ===
+*.csv
+*.pkl
+*.tsv
+*.json.bak
+
+# === LOGS & TEMP ===
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# === SECRETS ===
+.env
+.env.*
+secrets/
+*.pem
+*.key

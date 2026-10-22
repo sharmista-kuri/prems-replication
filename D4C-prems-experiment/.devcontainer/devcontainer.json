@@ -1,0 +1,24 @@
+{
+  "name": "D4C PRMS Experiment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "redhat.java"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": { "path": "/bin/bash" }
+        }
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/D4C-prms-experiment",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/D4C-prms-experiment,type=bind"
+}
