@@ -1,0 +1,16 @@
+diff --git src/main/java/org/jsoup/nodes/DocumentType.java src/main/java/org/jsoup/nodes/DocumentType.java
+index 4b4a5e9..282a4da 100644
+--- src/main/java/org/jsoup/nodes/DocumentType.java
++++ src/main/java/org/jsoup/nodes/DocumentType.java
+@@ -18,8 +18,9 @@ public class DocumentType extends Node {
+      */
+     public DocumentType(String name, String publicId, String systemId, String baseUri) {
+         super(baseUri);
+-
+-        Validate.notEmpty(name);
++// buggy code
++//         Validate.notEmpty(name);
++       Validate.notNull(name);
+         attr("name", name);
+         attr("publicId", publicId);
+         attr("systemId", systemId);

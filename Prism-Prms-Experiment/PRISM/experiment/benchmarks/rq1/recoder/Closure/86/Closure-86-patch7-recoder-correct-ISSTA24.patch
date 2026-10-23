@@ -1,0 +1,12 @@
+--- Closure86b/src/com/google/javascript/jscomp/NodeUtil.java	2024-09-26 15:26:30.300823939 +0900
++++ Closure86f_recoder/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -2462,8 +2462,7 @@
+         // TODO(nicksantos): This needs to be changed so that it
+         // returns true iff we're sure the value was never aliased from inside
+         // the constructor (similar to callHasLocalResult)
+-        return true;
+-      case Token.FUNCTION:
++return false;      case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:
+       case Token.OBJECTLIT:

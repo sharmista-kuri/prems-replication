@@ -1,0 +1,15 @@
+diff --git src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
+index 38ae956..7294481 100644
+--- src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
++++ src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java
+@@ -180,7 +180,9 @@ public class ZipArchiveInputStream extends ArchiveInputStream {
+         in = new PushbackInputStream(inputStream, buf.capacity());
+         this.allowStoredEntriesWithDataDescriptor =
+             allowStoredEntriesWithDataDescriptor;
+-        // haven't read anything so far
++// buggy code
++// 
++       buf.position(buf.capacity());
+     }
+ 
+     public ZipArchiveEntry getNextZipEntry() throws IOException {

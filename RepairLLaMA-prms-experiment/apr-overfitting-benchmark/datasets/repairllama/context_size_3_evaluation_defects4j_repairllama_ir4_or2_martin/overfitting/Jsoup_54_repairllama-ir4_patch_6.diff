@@ -1,0 +1,16 @@
+diff --git src/main/java/org/jsoup/helper/W3CDom.java src/main/java/org/jsoup/helper/W3CDom.java
+index 20aeeda..6213a5a 100644
+--- src/main/java/org/jsoup/helper/W3CDom.java
++++ src/main/java/org/jsoup/helper/W3CDom.java
+@@ -121,8 +121,10 @@ public class W3CDom {
+ 
+         private void copyAttributes(org.jsoup.nodes.Node source, Element el) {
+             for (Attribute attribute : source.attributes()) {
+-                // valid xml attribute names are: ^[a-zA-Z_:][-a-zA-Z0-9_:.]
+                 String key = attribute.getKey().replaceAll("[^-a-zA-Z0-9_:.]", "");
++// buggy code
++// 
++               if (!"".equals(key))
+                     el.setAttribute(key, attribute.getValue());
+             }
+         }

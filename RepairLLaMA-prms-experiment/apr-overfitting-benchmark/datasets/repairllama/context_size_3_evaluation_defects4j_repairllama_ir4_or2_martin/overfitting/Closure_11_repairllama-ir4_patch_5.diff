@@ -1,0 +1,27 @@
+diff --git src/com/google/javascript/jscomp/TypeCheck.java src/com/google/javascript/jscomp/TypeCheck.java
+index ae8a320..2e12ecb 100644
+--- src/com/google/javascript/jscomp/TypeCheck.java
++++ src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1301,18 +1301,15 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+    * @param parent The parent of <code>n</code>
+    */
+   private void visitGetProp(NodeTraversal t, Node n, Node parent) {
+-    // obj.prop or obj.method()
+-    // Lots of types can appear on the left, a call to a void function can
+-    // never be on the left. getPropertyType will decide what is acceptable
+-    // and what isn't.
+     Node property = n.getLastChild();
+     Node objNode = n.getFirstChild();
+     JSType childType = getJSType(objNode);
+-
+     if (childType.isDict()) {
+       report(t, property, TypeValidator.ILLEGAL_PROPERTY_ACCESS, "'.'", "dict");
+-    } else if (n.getJSType() != null && parent.isAssign()) {
+-      return;
++// buggy code
++//     } else if (n.getJSType() != null && parent.isAssign()) {
++//       return;
++   } else if (n.getJSType() == null && parent.isAssign()) {
+     } else if (validator.expectNotNullOrUndefined(t, n, childType,
+         "No properties on this expression", getNativeType(OBJECT_TYPE))) {
+       checkPropertyAccess(childType, property.getString(), t, n);

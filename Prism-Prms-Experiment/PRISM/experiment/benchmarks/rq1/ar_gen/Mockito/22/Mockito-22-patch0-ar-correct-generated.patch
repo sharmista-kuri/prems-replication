@@ -1,0 +1,11 @@
+--- Mockito22b/src/org/mockito/internal/matchers/Equality.java	2024-02-28 11:18:51.564046754 +0900
++++ Mockito22b_Mockito-22-patch0-ar/src/org/mockito/internal/matchers/Equality.java	2024-02-28 11:18:51.604047483 +0900
+@@ -15,7 +15,7 @@
+         } else if (isArray(o1)) {
+             return isArray(o2) && areArraysEqual(o1, o2);
+         } else {
+-            return o1.equals(o2);
++ return o1 == o2 ||o1.equals(o2);
+         }
+     }
+ 

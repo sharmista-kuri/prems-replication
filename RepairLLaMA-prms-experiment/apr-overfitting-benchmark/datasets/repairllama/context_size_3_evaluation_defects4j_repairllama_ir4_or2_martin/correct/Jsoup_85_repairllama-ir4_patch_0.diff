@@ -1,0 +1,17 @@
+diff --git src/main/java/org/jsoup/nodes/Attribute.java src/main/java/org/jsoup/nodes/Attribute.java
+index 612fdeb..5f8d039 100644
+--- src/main/java/org/jsoup/nodes/Attribute.java
++++ src/main/java/org/jsoup/nodes/Attribute.java
+@@ -41,8 +41,11 @@ public class Attribute implements Map.Entry<String, String>, Cloneable  {
+      * @see #createFromEncoded*/
+     public Attribute(String key, String val, Attributes parent) {
+         Validate.notNull(key);
++// buggy code
++//         this.key = key.trim();
++//         Validate.notEmpty(key); 
+        this.key = key.trim();
+-        Validate.notEmpty(key); // trimming could potentially make empty, so validate here
++        Validate.notEmpty(this.key); 
+         this.val = val;
+         this.parent = parent;
+     }

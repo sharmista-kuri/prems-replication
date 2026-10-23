@@ -1,0 +1,26 @@
+{
+  "name": "Wang PRMS Experiment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "redhat.java"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        }
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/wang-prms-experiment",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/wang-prms-experiment,type=bind"
+}

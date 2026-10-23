@@ -1,0 +1,14 @@
+--- Chart13b/source/org/jfree/chart/block/BorderArrangement.java	2024-09-26 15:25:27.839352266 +0900
++++ Chart13f_recoder/source/org/jfree/chart/block/BorderArrangement.java
+@@ -451,10 +451,7 @@
+         }
+         h[3] = h[2];
+         if (this.rightBlock != null) {
+-            RectangleConstraint c4 = new RectangleConstraint(0.0,
+-                    new Range(0.0, constraint.getWidth() - w[2]),
+-                    LengthConstraintType.RANGE, h[2], null,
+-                    LengthConstraintType.FIXED);
++RectangleConstraint c4 = new RectangleConstraint(0.0, new Range(0.0, (constraint.getWidth() + w[2])), LengthConstraintType.RANGE, h[2], null, LengthConstraintType.FIXED);
+             Size2D size = this.rightBlock.arrange(g2, c4);
+             w[3] = size.width;
+         }

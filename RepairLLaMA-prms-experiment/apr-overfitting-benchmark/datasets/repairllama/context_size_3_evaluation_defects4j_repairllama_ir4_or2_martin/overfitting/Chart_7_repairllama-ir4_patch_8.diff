@@ -1,0 +1,71 @@
+diff --git source/org/jfree/data/time/TimePeriodValues.java source/org/jfree/data/time/TimePeriodValues.java
+index c51ebcb..861da2d 100644
+--- source/org/jfree/data/time/TimePeriodValues.java
++++ source/org/jfree/data/time/TimePeriodValues.java
+@@ -255,11 +255,9 @@ public class TimePeriodValues extends Series implements Serializable {
+      * @param index  the index of the time period.
+      */
+     private void updateBounds(TimePeriod period, int index) {
+-        
+         long start = period.getStart().getTime();
+         long end = period.getEnd().getTime();
+         long middle = start + ((end - start) / 2);
+-
+         if (this.minStartIndex >= 0) {
+             long minStart = getDataItem(this.minStartIndex).getPeriod()
+                 .getStart().getTime();
+@@ -270,7 +268,6 @@ public class TimePeriodValues extends Series implements Serializable {
+         else {
+             this.minStartIndex = index;
+         }
+-        
+         if (this.maxStartIndex >= 0) {
+             long maxStart = getDataItem(this.maxStartIndex).getPeriod()
+                 .getStart().getTime();
+@@ -281,7 +278,6 @@ public class TimePeriodValues extends Series implements Serializable {
+         else {
+             this.maxStartIndex = index;
+         }
+-        
+         if (this.minMiddleIndex >= 0) {
+             long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
+                 .getTime();
+@@ -295,9 +291,12 @@ public class TimePeriodValues extends Series implements Serializable {
+         else {
+             this.minMiddleIndex = index;
+         }
+-        
+         if (this.maxMiddleIndex >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
++// buggy code
++//             long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
++//                 .getTime();
++//             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
++           long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart()
+                 .getTime();
+             long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
+                 .getTime();
+@@ -309,7 +308,6 @@ public class TimePeriodValues extends Series implements Serializable {
+         else {
+             this.maxMiddleIndex = index;
+         }
+-        
+         if (this.minEndIndex >= 0) {
+             long minEnd = getDataItem(this.minEndIndex).getPeriod().getEnd()
+                 .getTime();
+@@ -320,7 +318,6 @@ public class TimePeriodValues extends Series implements Serializable {
+         else {
+             this.minEndIndex = index;
+         }
+-       
+         if (this.maxEndIndex >= 0) {
+             long maxEnd = getDataItem(this.maxEndIndex).getPeriod().getEnd()
+                 .getTime();
+@@ -331,7 +328,6 @@ public class TimePeriodValues extends Series implements Serializable {
+         else {
+             this.maxEndIndex = index;
+         }
+-        
+     }
+     
+     /**

@@ -1,0 +1,33 @@
+diff --git src/main/java/org/jsoup/parser/HtmlTreeBuilder.java src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+index 08444ef..9275c29 100644
+--- src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
++++ src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+@@ -464,14 +464,13 @@ public class HtmlTreeBuilder extends TreeBuilder {
+     }
+ 
+     private boolean inSpecificScope(String[] targetNames, String[] baseTypes, String[] extraTypes) {
+-        // https://html.spec.whatwg.org/multipage/parsing.html#has-an-element-in-the-specific-scope
+-        int bottom = stack.size() -1;
+-        if (bottom > MaxScopeSearchDepth) {
+-            bottom = MaxScopeSearchDepth;
+-        }
++// buggy code
++//         int bottom = stack.size() -1;
++//         if (bottom > MaxScopeSearchDepth) {
++//             bottom = MaxScopeSearchDepth;
++//         }
++       final int bottom = stack.size() - 1;
+         final int top = bottom > MaxScopeSearchDepth ? bottom - MaxScopeSearchDepth : 0;
+-        // don't walk too far up the tree
+-
+         for (int pos = bottom; pos >= top; pos--) {
+             final String elName = stack.get(pos).nodeName();
+             if (inSorted(elName, targetNames))
+@@ -481,7 +480,6 @@ public class HtmlTreeBuilder extends TreeBuilder {
+             if (extraTypes != null && inSorted(elName, extraTypes))
+                 return false;
+         }
+-        //Validate.fail("Should not be reachable"); // would end up false because hitting 'html' at root (basetypes)
+         return false;
+     }
+ 

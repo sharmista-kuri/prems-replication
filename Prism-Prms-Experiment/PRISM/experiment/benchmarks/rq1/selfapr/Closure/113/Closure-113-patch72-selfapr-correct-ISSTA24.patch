@@ -1,0 +1,11 @@
+--- Closure113b/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java	2024-09-26 16:00:03.315301735 +0900
++++ Closure113f_selfapr/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java
+@@ -326,7 +326,7 @@
+       // the checks for broken requires turned off. In these cases, we
+       // allow broken requires to be preserved by the first run to
+       // let them be caught in the subsequent run.
+-      if (provided != null) {
++if(provided!=  null  ||  requiresLevel.isOn())  {
+         parent.detachFromParent();
+         compiler.reportCodeChange();
+       }

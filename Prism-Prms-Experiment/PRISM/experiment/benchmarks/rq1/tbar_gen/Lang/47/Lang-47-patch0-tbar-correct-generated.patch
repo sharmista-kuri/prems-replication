@@ -1,0 +1,18 @@
+--- Lang47b/src/java/org/apache/commons/lang/text/StrBuilder.java	2023-09-19 13:57:57.935164239 +0900
++++ Lang47b-Lang-47-patch0-tbar/src/java/org/apache/commons/lang/text/StrBuilder.java	2023-09-19 13:57:58.055166863 +0900
+@@ -1183,6 +1183,7 @@
+         if (width > 0) {
+             ensureCapacity(size + width);
+             String str = (obj == null ? getNullText() : obj.toString());
++if (str == null) str = new String();
+             int strLen = str.length();
+             if (strLen >= width) {
+                 str.getChars(strLen - width, strLen, buffer, size);
+@@ -1227,6 +1228,7 @@
+         if (width > 0) {
+             ensureCapacity(size + width);
+             String str = (obj == null ? getNullText() : obj.toString());
++if (str == null) str = new String();
+             int strLen = str.length();
+             if (strLen >= width) {
+                 str.getChars(0, width, buffer, size);

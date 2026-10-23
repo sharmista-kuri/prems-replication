@@ -1,0 +1,12 @@
+--- Math5b/src/main/java/org/apache/commons/math3/complex/Complex.java	2024-09-26 15:27:50.683208007 +0900
++++ Math5f_recoder/src/main/java/org/apache/commons/math3/complex/Complex.java
+@@ -302,8 +302,7 @@
+         }
+ 
+         if (real == 0.0 && imaginary == 0.0) {
+-            return NaN;
+-        }
++return INF;        }
+ 
+         if (isInfinite) {
+             return ZERO;

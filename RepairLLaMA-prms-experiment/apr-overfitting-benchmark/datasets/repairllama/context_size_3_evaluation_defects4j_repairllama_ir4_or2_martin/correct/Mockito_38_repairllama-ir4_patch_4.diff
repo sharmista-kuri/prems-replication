@@ -1,0 +1,14 @@
+diff --git src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java
+index 3bf226b..620608a 100644
+--- src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java
++++ src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java
+@@ -45,6 +45,8 @@ public class ArgumentMatchingTool {
+     }
+ 
+     private boolean toStringEquals(Matcher m, Object arg) {
+-        return StringDescription.toString(m).equals(arg.toString());
++// buggy code
++//         return StringDescription.toString(m).equals(arg.toString());
++       return StringDescription.toString(m).equals(String.valueOf(arg));
+     }
+ }

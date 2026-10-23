@@ -1,0 +1,11 @@
+--- Closure126b/src/com/google/javascript/jscomp/MinimizeExitPoints.java	2023-08-16 10:49:35.938837775 +0900
++++ Closure126b_Closure-126-patch2-tbar/src/com/google/javascript/jscomp/MinimizeExitPoints.java	2023-08-16 11:09:05.258865480 +0900
+@@ -140,7 +140,7 @@
+        */
+       if (NodeUtil.hasFinally(n)) {
+         Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
++tryMinimizeExits(tryBlock, exitType, labelName);
+       }
+     }
+ 

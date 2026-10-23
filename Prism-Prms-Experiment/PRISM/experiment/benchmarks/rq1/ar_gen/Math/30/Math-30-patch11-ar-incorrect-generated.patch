@@ -1,0 +1,11 @@
+--- Math30b/src/main/java/org/apache/commons/math3/special/Gamma.java	2024-02-28 11:19:08.292351316 +0900
++++ Math30b_Math-30-patch11-ar/src/main/java/org/apache/commons/math3/special/Gamma.java	2024-02-28 11:19:08.464354450 +0900
+@@ -151,7 +151,7 @@
+                                            int maxIterations) {
+         double ret;
+ 
+-        if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {
++        if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (false)) {
+             ret = Double.NaN;
+         } else if (x == 0.0) {
+             ret = 0.0;

@@ -1,0 +1,42 @@
+diff --git src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java
+index bf3e4bf..cbc1984 100644
+--- src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java
++++ src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java
+@@ -166,7 +166,6 @@ public class UnivariateRealSolverUtils {
+             double initial, double lowerBound, double upperBound, 
+             int maximumIterations) throws ConvergenceException, 
+             FunctionEvaluationException {
+-        
+         if (function == null) {
+             throw MathRuntimeException.createIllegalArgumentException("function is null");
+         }
+@@ -184,18 +183,17 @@ public class UnivariateRealSolverUtils {
+         double fa;
+         double fb;
+         int numIterations = 0 ;
+-    
+         do {
+             a = Math.max(a - 1.0, lowerBound);
+             b = Math.min(b + 1.0, upperBound);
+             fa = function.value(a);
+-            
+             fb = function.value(b);
+             numIterations++ ;
+         } while ((fa * fb > 0.0) && (numIterations < maximumIterations) && 
+                 ((a > lowerBound) || (b < upperBound)));
+-   
+-        if (fa * fb >= 0.0 ) {
++// buggy code
++//         if (fa * fb >= 0.0 ) {
++       if ((fa * fb >= 0.0) && (numIterations == maximumIterations)) {
+             throw new ConvergenceException(
+                       "number of iterations={0}, maximum iterations={1}, " +
+                       "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +
+@@ -203,7 +201,6 @@ public class UnivariateRealSolverUtils {
+                       numIterations, maximumIterations, initial,
+                       lowerBound, upperBound, a, b, fa, fb);
+         }
+-        
+         return new double[]{a, b};
+     }
+ 

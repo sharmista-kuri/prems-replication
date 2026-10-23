@@ -1,0 +1,30 @@
+diff --git src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java
+index e5518e3..fc8c395 100644
+--- src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java
++++ src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java
+@@ -500,9 +500,7 @@ public class Variance extends AbstractStorelessUnivariateStatistic implements Se
+      */
+     public double evaluate(final double[] values, final double[] weights,
+                            final double mean, final int begin, final int length) {
+-
+         double var = Double.NaN;
+-
+         if (test(values, weights, begin, length)) {
+             if (length == 1) {
+                 var = 0.0;
+@@ -515,12 +513,12 @@ public class Variance extends AbstractStorelessUnivariateStatistic implements Se
+                     accum += weights[i] * (dev * dev);
+                     accum2 += weights[i] * dev;
+                 }
+-
+                 double sumWts = 0;
+-                for (int i = 0; i < weights.length; i++) {
++// buggy code
++//                 for (int i = 0; i < weights.length; i++) {
++               for (int i = begin; i < begin+length; i++) {
+                     sumWts += weights[i];
+                 }
+-
+                 if (isBiasCorrected) {
+                     var = (accum - (accum2 * accum2 / sumWts)) / (sumWts - 1.0);
+                 } else {

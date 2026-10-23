@@ -1,0 +1,11 @@
+--- Lang21b/src/main/java/org/apache/commons/lang3/time/DateUtils.java	2024-09-26 15:54:27.526913099 +0900
++++ Lang21f_reward_repair/src/main/java/org/apache/commons/lang3/time/DateUtils.java
+@@ -262,7 +262,7 @@
+         return (cal1.get(Calendar.MILLISECOND) == cal2.get(Calendar.MILLISECOND) &&
+                 cal1.get(Calendar.SECOND) == cal2.get(Calendar.SECOND) &&
+                 cal1.get(Calendar.MINUTE) == cal2.get(Calendar.MINUTE) &&
+-                cal1.get(Calendar.HOUR) == cal2.get(Calendar.HOUR) &&
++(cal1.get(Calendar.HOUR_OF_DAY))  ==  cal2.get(Calendar.HOUR_OF_DAY)  &&
+                 cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR) &&
+                 cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+                 cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) &&

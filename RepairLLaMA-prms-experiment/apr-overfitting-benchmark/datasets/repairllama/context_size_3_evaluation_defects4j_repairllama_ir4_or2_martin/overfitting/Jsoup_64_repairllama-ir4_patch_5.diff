@@ -1,0 +1,20 @@
+diff --git src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
+index f4b56f7..cc75bca 100644
+--- src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
++++ src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
+@@ -1486,9 +1486,14 @@ enum HtmlTreeBuilderState {
+     }
+ 
+     private static void handleRawtext(Token.StartTag startTag, HtmlTreeBuilder tb) {
+-        tb.insert(startTag);
++// buggy code
++//         tb.insert(startTag);
++//         tb.tokeniser.transition(TokeniserState.Rawtext);
++//         tb.markInsertionMode();
++//         tb.transition(Text);
+        tb.tokeniser.transition(TokeniserState.Rawtext);
+         tb.markInsertionMode();
++        tb.insert(startTag);
+         tb.transition(Text);
+     }
+ 

@@ -1,0 +1,11 @@
+--- Math70b/src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java	2023-08-16 10:49:32.546755114 +0900
++++ Math70b_Math-70-patch0-tbar/src/main/java/org/apache/commons/math/analysis/solvers/BisectionSolver.java	2023-08-16 11:09:01.906768469 +0900
+@@ -69,7 +69,7 @@
+     /** {@inheritDoc} */
+     public double solve(final UnivariateRealFunction f, double min, double max, double initial)
+         throws MaxIterationsExceededException, FunctionEvaluationException {
+-        return solve(min, max);
++return solve(f, min, max);
+     }
+ 
+     /** {@inheritDoc} */

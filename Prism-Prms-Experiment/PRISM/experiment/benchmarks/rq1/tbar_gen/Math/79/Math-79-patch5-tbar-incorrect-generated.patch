@@ -1,0 +1,11 @@
+--- Math79b/src/main/java/org/apache/commons/math/util/MathUtils.java	2023-08-16 10:49:31.830737664 +0900
++++ Math79b_Math-79-patch5-tbar/src/main/java/org/apache/commons/math/util/MathUtils.java	2023-08-16 15:50:26.998946020 +0900
+@@ -1623,7 +1623,7 @@
+     public static double distance(int[] p1, int[] p2) {
+       int sum = 0;
+       for (int i = 0; i < p1.length; i++) {
+-          final int dp = p1[i] - p2[i];
++final float dp = p1[i] - p2[i];
+           sum += dp * dp;
+       }
+       return Math.sqrt(sum);

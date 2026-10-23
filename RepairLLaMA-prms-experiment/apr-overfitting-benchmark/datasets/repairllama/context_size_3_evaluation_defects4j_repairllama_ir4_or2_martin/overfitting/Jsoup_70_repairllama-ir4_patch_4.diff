@@ -1,0 +1,26 @@
+diff --git src/main/java/org/jsoup/nodes/Element.java src/main/java/org/jsoup/nodes/Element.java
+index faca4c8..7e3e39e 100644
+--- src/main/java/org/jsoup/nodes/Element.java
++++ src/main/java/org/jsoup/nodes/Element.java
+@@ -1085,13 +1085,18 @@ public class Element extends Node {
+     }
+ 
+     static boolean preserveWhitespace(Node node) {
+-        // looks only at this element and five levels up, to prevent recursion & needless stack searches
+         if (node != null && node instanceof Element) {
+             Element el = (Element) node;
++// buggy code
++//                 if (el.tag.preserveWhitespace())
++//                     return true;
++//                 else
++//                     return el.parent() != null && el.parent().tag.preserveWhitespace();
++           do {
+                 if (el.tag.preserveWhitespace())
+                     return true;
+-                else
+-                    return el.parent() != null && el.parent().tag.preserveWhitespace();
++                el = el.parent();
++            } while (el != null);
+         }
+         return false;
+     }

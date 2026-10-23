@@ -1,0 +1,16 @@
+diff --git source/org/jfree/data/time/Week.java source/org/jfree/data/time/Week.java
+index f1f3354..e1495d1 100644
+--- source/org/jfree/data/time/Week.java
++++ source/org/jfree/data/time/Week.java
+@@ -171,8 +171,9 @@ public class Week extends RegularTimePeriod implements Serializable {
+      * @deprecated As of 1.0.7, use {@link #Week(Date, TimeZone, Locale)}.
+      */
+     public Week(Date time, TimeZone zone) {
+-        // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++// buggy code
++//         this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++       this(time, TimeZone.getDefault(), Locale.getDefault());
+     }
+ 
+     /**

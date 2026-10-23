@@ -1,0 +1,18 @@
+diff --git src/main/java/org/jsoup/nodes/Element.java src/main/java/org/jsoup/nodes/Element.java
+index cd2e86a..7457ec9 100644
+--- src/main/java/org/jsoup/nodes/Element.java
++++ src/main/java/org/jsoup/nodes/Element.java
+@@ -1169,10 +1169,10 @@ public class Element extends Node {
+         if (this == o) return true;
+         if (o == null || getClass() != o.getClass()) return false;
+         if (!super.equals(o)) return false;
+-
+         Element element = (Element) o;
+-
+-        return this == o;
++// buggy code
++//         return this == o;
++       return this == o || super.equals(o);
+     }
+ 
+     @Override

@@ -1,0 +1,11 @@
+--- Math58b/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java	2023-08-15 13:14:28.816011307 +0900
++++ Math58b_Math-58-patch1-tbar/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java	2023-08-16 15:50:26.762939669 +0900
+@@ -310,7 +310,7 @@
+                     if (p2 == null) {
+                         return 1;
+                     }
+-                    if (p1.getX() < p2.getX()) {
++if (p1.getY() < p2.getX()) {
+                         return -1;
+                     }
+                     if (p1.getX() > p2.getX()) {

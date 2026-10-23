@@ -1,0 +1,47 @@
+diff --git src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+index b73ac9d..9237589 100644
+--- src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
++++ src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java
+@@ -160,19 +160,15 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
+      */
+     private static <T extends Clusterable<T>> List<Cluster<T>>
+         chooseInitialCenters(final Collection<T> points, final int k, final Random random) {
+-
+         final List<T> pointSet = new ArrayList<T>(points);
+         final List<Cluster<T>> resultSet = new ArrayList<Cluster<T>>();
+-
+-        // Choose one center uniformly at random from among the data points.
+         final T firstPoint = pointSet.remove(random.nextInt(pointSet.size()));
+         resultSet.add(new Cluster<T>(firstPoint));
+-
+         final double[] dx2 = new double[pointSet.size()];
+         while (resultSet.size() < k) {
+-            // For each data point x, compute D(x), the distance between x and
+-            // the nearest center that has already been chosen.
+-            int sum = 0;
++// buggy code
++//             int sum = 0;
++           double sum = 0d;
+             for (int i = 0; i < pointSet.size(); i++) {
+                 final T p = pointSet.get(i);
+                 final Cluster<T> nearest = getNearestCluster(resultSet, p);
+@@ -180,9 +176,6 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
+                 sum += d * d;
+                 dx2[i] = sum;
+             }
+-
+-            // Add one new data point as a center. Each point x is chosen with
+-            // probability proportional to D(x)2
+             final double r = random.nextDouble() * sum;
+             for (int i = 0 ; i < dx2.length; i++) {
+                 if (dx2[i] >= r) {
+@@ -192,9 +185,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
+                 }
+             }
+         }
+-
+         return resultSet;
+-
+     }
+ 
+     /**

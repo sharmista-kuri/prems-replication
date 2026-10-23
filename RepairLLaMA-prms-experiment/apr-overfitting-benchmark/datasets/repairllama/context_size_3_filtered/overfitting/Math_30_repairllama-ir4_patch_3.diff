@@ -1,0 +1,25 @@
+diff --git src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java
+index ce694ce..4677adf 100644
+--- src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java
++++ src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java
+@@ -169,17 +169,13 @@ public class MannWhitneyUTest {
+                                              final int n1,
+                                              final int n2)
+         throws ConvergenceException, MaxCountExceededException {
+-
+-        final int n1n2prod = n1 * n2;
+-
+-        // http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U#Normal_approximation
++// buggy code
++//         final int n1n2prod = n1 * n2;
++       final double n1n2prod = (double) n1 * n2;
+         final double EU = n1n2prod / 2.0;
+         final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;
+-
+         final double z = (Umin - EU) / FastMath.sqrt(VarU);
+-
+         final NormalDistribution standardNormal = new NormalDistribution(0, 1);
+-
+         return 2 * standardNormal.cumulativeProbability(z);
+     }
+ 

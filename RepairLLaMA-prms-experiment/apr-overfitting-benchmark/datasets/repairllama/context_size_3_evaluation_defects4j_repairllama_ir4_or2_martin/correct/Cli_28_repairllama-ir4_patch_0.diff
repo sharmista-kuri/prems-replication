@@ -1,0 +1,46 @@
+diff --git src/java/org/apache/commons/cli/Parser.java src/java/org/apache/commons/cli/Parser.java
+index 6b39536..0f551f6 100644
+--- src/java/org/apache/commons/cli/Parser.java
++++ src/java/org/apache/commons/cli/Parser.java
+@@ -255,18 +255,13 @@ public abstract class Parser implements CommandLineParser
+         {
+             return;
+         }
+-
+         for (Enumeration e = properties.propertyNames(); e.hasMoreElements();)
+         {
+             String option = e.nextElement().toString();
+-
+             if (!cmd.hasOption(option))
+             {
+                 Option opt = getOptions().getOption(option);
+-
+-                // get the value from the properties instance
+                 String value = properties.getProperty(option);
+-
+                 if (opt.hasArg())
+                 {
+                     if (opt.getValues() == null || opt.getValues().length == 0)
+@@ -277,7 +272,6 @@ public abstract class Parser implements CommandLineParser
+                         }
+                         catch (RuntimeException exp)
+                         {
+-                            // if we cannot add the value don't worry about it
+                         }
+                     }
+                 }
+@@ -285,11 +279,10 @@ public abstract class Parser implements CommandLineParser
+                         || "true".equalsIgnoreCase(value)
+                         || "1".equalsIgnoreCase(value)))
+                 {
+-                    // if the value is not yes, true or 1 then don't add the
+-                    // option to the CommandLine
+-                    break;
++// buggy code
++//                     break;
++                   continue;
+                 }
+-
+                 cmd.addOption(opt);
+             }
+         }

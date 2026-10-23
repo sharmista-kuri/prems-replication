@@ -1,0 +1,11 @@
+--- Closure86b/src/com/google/javascript/jscomp/NodeUtil.java	2024-09-26 15:59:48.046921515 +0900
++++ Closure86f_selfapr/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -2462,7 +2462,7 @@
+         // TODO(nicksantos): This needs to be changed so that it
+         // returns true iff we're sure the value was never aliased from inside
+         // the constructor (similar to callHasLocalResult)
+-        return true;
++return(NodeUtil.isAssignmentOp(value)||  NodeUtil.isFunction(value))  &&  locals.apply(value);
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:

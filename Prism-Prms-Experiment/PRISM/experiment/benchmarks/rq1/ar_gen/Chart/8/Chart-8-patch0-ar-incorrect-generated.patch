@@ -1,0 +1,11 @@
+--- Chart8b/source/org/jfree/data/time/Week.java	2024-02-28 11:19:14.096457116 +0900
++++ Chart8b_Chart-8-patch0-ar/source/org/jfree/data/time/Week.java	2024-02-28 11:19:14.192458866 +0900
+@@ -195,7 +195,7 @@
+         if (locale == null) {
+             throw new IllegalArgumentException("Null 'locale' argument.");
+         }
+-        Calendar calendar = Calendar.getInstance(zone, locale);
++        Calendar calendar = Calendar.getInstance(locale);
+         calendar.setTime(time);
+ 
+         // sometimes the last few days of the year are considered to fall in

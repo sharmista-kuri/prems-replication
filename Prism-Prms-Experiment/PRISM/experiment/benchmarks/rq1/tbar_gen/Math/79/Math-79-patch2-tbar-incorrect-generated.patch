@@ -1,0 +1,14 @@
+--- Math79b/src/main/java/org/apache/commons/math/util/MathUtils.java	2023-08-16 10:49:31.830737664 +0900
++++ Math79b_Math-79-patch2-tbar/src/main/java/org/apache/commons/math/util/MathUtils.java	2023-08-16 15:50:26.982945588 +0900
+@@ -1621,9 +1621,9 @@
+      * @return the L<sub>2</sub> distance between the two points
+      */
+     public static double distance(int[] p1, int[] p2) {
+-      int sum = 0;
++long sum = 0;
+       for (int i = 0; i < p1.length; i++) {
+-          final int dp = p1[i] - p2[i];
++          final long dp = p1[i] - p2[i];
+           sum += dp * dp;
+       }
+       return Math.sqrt(sum);

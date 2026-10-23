@@ -1,0 +1,30 @@
+diff --git src/java/org/apache/commons/cli/HelpFormatter.java src/java/org/apache/commons/cli/HelpFormatter.java
+index 183cae3..7edc28b 100644
+--- src/java/org/apache/commons/cli/HelpFormatter.java
++++ src/java/org/apache/commons/cli/HelpFormatter.java
+@@ -618,7 +618,6 @@ public class HelpFormatter {
+         {
+             buff.append("[");
+         }
+-
+         if (option.getOpt() != null)
+         {
+             buff.append("-").append(option.getOpt());
+@@ -627,14 +626,12 @@ public class HelpFormatter {
+         {
+             buff.append("--").append(option.getLongOpt());
+         }
+-
+-        // if the Option has a value
+-        if (option.hasArg() && (option.getArgName() != null))
++// buggy code
++//         if (option.hasArg() && (option.getArgName() != null))
++       if (option.hasArg() && (option.getArgName() != null) && !option.isRequired())
+         {
+             buff.append(" <").append(option.getArgName()).append(">");
+         }
+-
+-        // if the Option is not a required option
+         if (!required)
+         {
+             buff.append("]");

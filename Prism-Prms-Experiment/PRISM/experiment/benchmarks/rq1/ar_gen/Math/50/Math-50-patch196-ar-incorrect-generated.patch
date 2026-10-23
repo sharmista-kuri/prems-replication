@@ -1,0 +1,11 @@
+--- Math50b/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2024-02-28 11:19:16.996510004 +0900
++++ Math50b_Math-50-patch196-ar/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2024-02-28 11:19:18.812543131 +0900
+@@ -232,7 +232,7 @@
+ 
+             // If the current interval is within the given accuracies, we
+             // are satisfied with the current approximation.
+-            if (FastMath.abs(x1 - x0) < FastMath.max(rtol * FastMath.abs(x1),
++ if (f1 >= 0 && Math.abs(x1 - x0) < FastMath.max(rtol * FastMath.abs(x1),
+                                                      atol)) {
+                 switch (allowed) {
+                 case ANY_SIDE:

@@ -1,0 +1,19 @@
+--- Chart4b/source/org/jfree/chart/plot/XYPlot.java	2023-08-16 10:49:32.502754042 +0900
++++ Chart4b_Chart-4-patch0-tbar/source/org/jfree/chart/plot/XYPlot.java	2023-08-16 11:09:01.866767311 +0900
+@@ -4490,6 +4490,7 @@
+                     }
+                 }
+                 
++if (r != null) {
+                     Collection c = r.getAnnotations();
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {
+@@ -4499,6 +4500,8 @@
+                         }
+                     }
+             }
++
++            }
+         }
+ 
+         Iterator it = includedAnnotations.iterator();

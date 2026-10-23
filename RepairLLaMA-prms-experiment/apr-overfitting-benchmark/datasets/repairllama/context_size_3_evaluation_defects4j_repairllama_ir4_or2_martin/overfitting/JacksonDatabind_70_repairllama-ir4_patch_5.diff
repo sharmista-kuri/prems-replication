@@ -1,0 +1,27 @@
+diff --git src/main/java/com/fasterxml/jackson/databind/deser/impl/BeanPropertyMap.java src/main/java/com/fasterxml/jackson/databind/deser/impl/BeanPropertyMap.java
+index dc79189..c098bf8 100644
+--- src/main/java/com/fasterxml/jackson/databind/deser/impl/BeanPropertyMap.java
++++ src/main/java/com/fasterxml/jackson/databind/deser/impl/BeanPropertyMap.java
+@@ -428,18 +428,17 @@ System.err.println("And new propr #"+slot+" '"+key+"'");
+         ArrayList<SettableBeanProperty> props = new ArrayList<SettableBeanProperty>(_size);
+         String key = getPropertyName(propToRm);
+         boolean found = false;
+-
+         for (int i = 1, end = _hashArea.length; i < end; i += 2) {
+             SettableBeanProperty prop = (SettableBeanProperty) _hashArea[i];
+             if (prop == null) {
+                 continue;
+             }
+             if (!found) {
+-                // 09-Jan-2017, tatu: Important: must check name slot and NOT property name,
+-                //   as only former is lower-case in case-insensitive case
+-                found = key.equals(prop.getName());
++// buggy code
++//                 found = key.equals(prop.getName());
++               String propName = getPropertyName(prop);
++                found = key.equals(propName);
+                 if (found) {
+-                    // need to leave a hole here
+                     _propsInOrder[_findFromOrdered(prop)] = null;
+                     continue;
+                 }

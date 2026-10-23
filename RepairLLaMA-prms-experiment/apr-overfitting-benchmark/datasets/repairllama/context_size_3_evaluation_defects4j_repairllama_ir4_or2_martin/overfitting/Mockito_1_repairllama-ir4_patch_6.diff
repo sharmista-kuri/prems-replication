@@ -1,0 +1,41 @@
+diff --git src/org/mockito/internal/invocation/InvocationMatcher.java src/org/mockito/internal/invocation/InvocationMatcher.java
+index 7b877b1..d6c7054 100644
+--- src/org/mockito/internal/invocation/InvocationMatcher.java
++++ src/org/mockito/internal/invocation/InvocationMatcher.java
+@@ -120,8 +120,11 @@ public class InvocationMatcher implements DescribedInvocation, CapturesArgumensF
+     public void captureArgumentsFrom(Invocation invocation) {
+         if (invocation.getMethod().isVarArgs()) {
+             int indexOfVararg = invocation.getRawArguments().length - 1;
++// buggy code
++//             throw new UnsupportedOperationException();
++           if (indexOfVararg < 0) {
+                 throw new UnsupportedOperationException();
+-
++            }
+         } else {
+             for (int position = 0; position < matchers.size(); position++) {
+                 Matcher m = matchers.get(position);
+@@ -130,23 +133,6 @@ public class InvocationMatcher implements DescribedInvocation, CapturesArgumensF
+                 }
+             }
+         }
+-
+-//        for (int position = 0; position < matchers.size(); position++) {
+-//            Matcher m = matchers.get(position);
+-//            if (m instanceof CapturesArguments && invocation.getRawArguments().length > position) {
+-//                //TODO SF - this whole lot can be moved captureFrom implementation
+-//                if(isVariableArgument(invocation, position) && isVarargMatcher(m)) {
+-//                    Object array = invocation.getRawArguments()[position];
+-//                    for (int i = 0; i < Array.getLength(array); i++) {
+-//                        ((CapturesArguments) m).captureFrom(Array.get(array, i));
+-//                    }
+-//                    //since we've captured all varargs already, it does not make sense to process other matchers.
+-//                    return;
+-//                } else {
+-//                    ((CapturesArguments) m).captureFrom(invocation.getRawArguments()[position]);
+-//                }
+-//            }
+-//        }
+     }
+ 
+     private boolean isVarargMatcher(Matcher matcher) {

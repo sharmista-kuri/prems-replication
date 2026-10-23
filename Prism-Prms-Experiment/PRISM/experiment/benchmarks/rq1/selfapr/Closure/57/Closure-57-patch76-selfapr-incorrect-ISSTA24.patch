@@ -1,0 +1,11 @@
+--- Closure57b/src/com/google/javascript/jscomp/ClosureCodingConvention.java	2024-09-26 15:59:20.422233351 +0900
++++ Closure57f_selfapr/src/com/google/javascript/jscomp/ClosureCodingConvention.java
+@@ -194,7 +194,7 @@
+         String qualifiedName = callee.getQualifiedName();
+         if (functionName.equals(qualifiedName)) {
+           Node target = callee.getNext();
+-          if (target != null) {
++if(target!=  null  &&  node.getFirstChild().getNext().getType()  ==  Token.STRING)  {
+             className = target.getString();
+           }
+         }

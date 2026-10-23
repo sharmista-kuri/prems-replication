@@ -1,0 +1,11 @@
+--- Math85b/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2023-08-16 10:49:32.042742831 +0900
++++ Math85b_Math-85-patch21-tbar/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2023-08-16 15:50:27.274953447 +0900
+@@ -195,7 +195,7 @@
+         } while ((fa * fb > 0.0) && (numIterations < maximumIterations) && 
+                 ((a > lowerBound) || (b < upperBound)));
+    
+-        if (fa * fb >= 0.0 ) {
++if (fa > upperBound && (fa * fb >= 0.0) ) {
+             throw new ConvergenceException(
+                       "number of iterations={0}, maximum iterations={1}, " +
+                       "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +

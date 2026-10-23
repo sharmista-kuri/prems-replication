@@ -1,0 +1,11 @@
+--- Closure14b/src/com/google/javascript/jscomp/ControlFlowAnalysis.java	2024-09-26 16:05:25.159465915 +0900
++++ Closure14f_simfix/src/com/google/javascript/jscomp/ControlFlowAnalysis.java
+@@ -764,7 +764,7 @@
+         } else if (parent.getLastChild() == node){
+           if (cfa != null) {
+             for (Node finallyNode : cfa.finallyMap.get(parent)) {
+-              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);
++cfa.createEdge(fromNode,Branch.ON_EX,finallyNode);
+             }
+           }
+           return computeFollowNode(fromNode, parent, cfa);

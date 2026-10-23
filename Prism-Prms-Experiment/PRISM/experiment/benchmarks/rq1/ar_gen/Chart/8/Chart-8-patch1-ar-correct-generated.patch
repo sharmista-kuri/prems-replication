@@ -1,0 +1,11 @@
+--- Chart8b/source/org/jfree/data/time/Week.java	2024-02-28 11:19:14.096457116 +0900
++++ Chart8b_Chart-8-patch1-ar/source/org/jfree/data/time/Week.java	2024-02-28 11:19:14.204459086 +0900
+@@ -172,7 +172,7 @@
+      */
+     public Week(Date time, TimeZone zone) {
+         // defer argument checking...
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++ this(time, zone, Locale.getDefault());
+     }
+ 
+     /**

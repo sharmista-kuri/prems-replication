@@ -1,0 +1,11 @@
+--- Closure46b/src/com/google/javascript/rhino/jstype/RecordType.java	2023-08-16 10:49:35.358823641 +0900
++++ Closure46b_Closure-46-patch1-tbar/src/com/google/javascript/rhino/jstype/RecordType.java	2023-08-16 11:09:04.678848700 +0900
+@@ -139,7 +139,7 @@
+ 
+   @Override
+   public JSType getLeastSupertype(JSType that) {
+-    if (!that.isRecordType()) {
++if ((!that.isRecordType()) || !(JSType.isSubtypeHelper(this, that))) {
+       return super.getLeastSupertype(that);
+     }
+     RecordTypeBuilder builder = new RecordTypeBuilder(registry);

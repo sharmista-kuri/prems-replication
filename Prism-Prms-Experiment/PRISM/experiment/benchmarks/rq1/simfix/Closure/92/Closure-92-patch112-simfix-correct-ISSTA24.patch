@@ -1,0 +1,26 @@
+--- Closure92b/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java	2024-09-26 16:05:56.391871785 +0900
++++ Closure92f_simfix/src/com/google/javascript/jscomp/ProcessClosurePrimitives.java
+@@ -786,19 +786,14 @@
+         } else {
+           // In this case, the name was implicitly provided by two independent
+           // modules. We need to move this code up to a common module.
+-          int indexOfDot = namespace.indexOf('.');
++int indexOfDot=namespace.lastIndexOf('.');
+           if (indexOfDot == -1) {
+-            // Any old place is fine.
+-            compiler.getNodeForCodeInsertion(minimumModule)
+-                .addChildToBack(replacementNode);
++compiler.getNodeForCodeInsertion(minimumModule).addChildToBack(replacementNode);
+           } else {
+-            // Add it after the parent namespace.
+-            ProvidedName parentName =
+-                providedNames.get(namespace.substring(0, indexOfDot));
++ProvidedName parentName=providedNames.get(namespace.substring(0,indexOfDot));
+             Preconditions.checkNotNull(parentName);
+             Preconditions.checkNotNull(parentName.replacementNode);
+-            parentName.replacementNode.getParent().addChildAfter(
+-                replacementNode, parentName.replacementNode);
++parentName.replacementNode.getParent().addChildAfter(replacementNode,parentName.replacementNode);
+           }
+         }
+         if (explicitNode != null) {

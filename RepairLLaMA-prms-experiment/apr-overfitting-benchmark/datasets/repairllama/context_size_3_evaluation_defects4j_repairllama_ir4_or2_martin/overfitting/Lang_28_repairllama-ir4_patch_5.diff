@@ -1,0 +1,39 @@
+diff --git src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+index c3cb869..d824d04 100644
+--- src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
++++ src/main/java/org/apache/commons/lang3/text/translate/NumericEntityUnescaper.java
+@@ -33,22 +33,18 @@ public class NumericEntityUnescaper extends CharSequenceTranslator {
+      */
+     @Override
+     public int translate(CharSequence input, int index, Writer out) throws IOException {
+-        // TODO: Protect from ArrayIndexOutOfBounds
+         if(input.charAt(index) == '&' && input.charAt(index + 1) == '#') {
+             int start = index + 2;
+             boolean isHex = false;
+-
+             char firstChar = input.charAt(start);
+             if(firstChar == 'x' || firstChar == 'X') {
+                 start++;
+                 isHex = true;
+             }
+-
+             int end = start;
+             while(input.charAt(end) != ';') {
+                 end++;
+             }
+-
+             int entityValue;
+             try {
+                 if(isHex) {
+@@ -59,8 +55,9 @@ public class NumericEntityUnescaper extends CharSequenceTranslator {
+             } catch(NumberFormatException nfe) {
+                 return 0;
+             }
+-
+-                out.write(entityValue);
++// buggy code
++//                 out.write(entityValue);
++           out.write(Character.toChars(entityValue));
+             return 2 + (end - start) + (isHex ? 1 : 0) + 1;
+         }
+         return 0;

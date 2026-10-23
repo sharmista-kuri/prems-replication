@@ -1,0 +1,48 @@
+diff --git src/main/java/org/jsoup/parser/HtmlTreeBuilder.java src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+index 4a58fdf..ad7b8e8 100644
+--- src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
++++ src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+@@ -390,8 +390,10 @@ public class HtmlTreeBuilder extends TreeBuilder {
+             String name = node.nodeName();
+             if ("select".equals(name)) {
+                 transition(HtmlTreeBuilderState.InSelect);
+-                break; // frag
+-            } else if (("td".equals(name) || "td".equals(name) && !last)) {
++                break; 
++// buggy code
++//             } else if (("td".equals(name) || "td".equals(name) && !last)) {
++           } else if ("th".equals(name) || "td".equals(name) && !last) {
+                 transition(HtmlTreeBuilderState.InCell);
+                 break;
+             } else if ("tr".equals(name)) {
+@@ -405,25 +407,25 @@ public class HtmlTreeBuilder extends TreeBuilder {
+                 break;
+             } else if ("colgroup".equals(name)) {
+                 transition(HtmlTreeBuilderState.InColumnGroup);
+-                break; // frag
++                break; 
+             } else if ("table".equals(name)) {
+                 transition(HtmlTreeBuilderState.InTable);
+                 break;
+             } else if ("head".equals(name)) {
+                 transition(HtmlTreeBuilderState.InBody);
+-                break; // frag
++                break; 
+             } else if ("body".equals(name)) {
+                 transition(HtmlTreeBuilderState.InBody);
+                 break;
+             } else if ("frameset".equals(name)) {
+                 transition(HtmlTreeBuilderState.InFrameset);
+-                break; // frag
++                break; 
+             } else if ("html".equals(name)) {
+                 transition(HtmlTreeBuilderState.BeforeHead);
+-                break; // frag
++                break; 
+             } else if (last) {
+                 transition(HtmlTreeBuilderState.InBody);
+-                break; // frag
++                break; 
+             }
+         }
+     }

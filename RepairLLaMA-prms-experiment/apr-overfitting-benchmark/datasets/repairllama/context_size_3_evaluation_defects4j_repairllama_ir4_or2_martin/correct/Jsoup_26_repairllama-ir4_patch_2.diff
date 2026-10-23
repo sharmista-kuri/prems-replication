@@ -1,0 +1,18 @@
+diff --git src/main/java/org/jsoup/safety/Cleaner.java src/main/java/org/jsoup/safety/Cleaner.java
+index 7d7f316..4f0f418 100644
+--- src/main/java/org/jsoup/safety/Cleaner.java
++++ src/main/java/org/jsoup/safety/Cleaner.java
+@@ -38,10 +38,11 @@ public class Cleaner {
+      */
+     public Document clean(Document dirtyDocument) {
+         Validate.notNull(dirtyDocument);
+-
+         Document clean = Document.createShell(dirtyDocument.baseUri());
++// buggy code
++// 
++       if (dirtyDocument.body() != null)
+             copySafeNodes(dirtyDocument.body(), clean.body());
+-
+         return clean;
+     }
+ 

@@ -1,0 +1,11 @@
+--- Math82b/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2023-08-16 10:49:34.142794009 +0900
++++ Math82b_Math-82-patch18-tbar/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2023-08-16 11:09:03.558816290 +0900
+@@ -82,7 +82,7 @@
+             if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+-                    minRatio = ratio;
++minRatio = rhs;
+                     minRatioPos = i; 
+                 }
+             }

@@ -1,0 +1,11 @@
+--- Closure123b/src/com/google/javascript/jscomp/CodeGenerator.java	2024-09-26 16:00:10.767487281 +0900
++++ Closure123f_selfapr/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -282,7 +282,7 @@
+       case Token.HOOK: {
+         Preconditions.checkState(childCount == 3);
+         int p = NodeUtil.precedence(type);
+-        Context rhsContext = Context.OTHER;
++Context  rhsContext  =  context!=  Context.OTHER?  Context.IN_FOR_INIT_CLAUSE  :  Context.OTHER;
+         addExpr(first, p + 1, context);
+         cc.addOp("?", true);
+         addExpr(first.getNext(), 1, rhsContext);

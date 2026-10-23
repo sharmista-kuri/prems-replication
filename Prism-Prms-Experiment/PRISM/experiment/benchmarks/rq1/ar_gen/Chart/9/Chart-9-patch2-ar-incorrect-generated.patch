@@ -1,0 +1,11 @@
+--- Chart9b/source/org/jfree/data/time/TimeSeries.java	2024-02-28 11:19:39.232916061 +0900
++++ Chart9b_Chart-9-patch2-ar/source/org/jfree/data/time/TimeSeries.java	2024-02-28 11:19:39.352918255 +0900
+@@ -941,7 +941,7 @@
+             endIndex = -(endIndex + 1); // this is first item AFTER end period
+             endIndex = endIndex - 1;    // so this is last item BEFORE end
+         }
+-        if (endIndex < 0) {
++ if (startIndex == endIndex + 1) {
+             emptyRange = true;
+         }
+         if (emptyRange) {

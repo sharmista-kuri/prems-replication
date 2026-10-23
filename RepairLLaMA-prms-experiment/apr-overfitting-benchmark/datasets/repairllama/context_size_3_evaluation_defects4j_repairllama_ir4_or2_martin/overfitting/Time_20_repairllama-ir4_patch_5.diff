@@ -1,0 +1,22 @@
+diff --git src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+index 558a586..44f92e9 100644
+--- src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
++++ src/main/java/org/joda/time/format/DateTimeFormatterBuilder.java
+@@ -2539,8 +2539,15 @@ public class DateTimeFormatterBuilder {
+ 
+         public int parseInto(DateTimeParserBucket bucket, String text, int position) {
+             String str = text.substring(position);
+-            for (String id : ALL_IDS) {
+-                if (str.startsWith(id)) {
++// buggy code
++//             for (String id : ALL_IDS) {
++//                 if (str.startsWith(id)) {
++//                     bucket.setZone(DateTimeZone.forID(id));
++//                     return position + id.length();
++//                 }
++           for (int i = str.length() - 1; i >= 0; i--) {
++                String id = str.substring(0, i + 1);
++                if (ALL_IDS.contains(id)) {
+                     bucket.setZone(DateTimeZone.forID(id));
+                     return position + id.length();
+                 }

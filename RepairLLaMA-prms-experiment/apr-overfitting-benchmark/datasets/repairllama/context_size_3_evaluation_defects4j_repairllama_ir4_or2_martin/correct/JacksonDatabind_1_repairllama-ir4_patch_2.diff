@@ -1,0 +1,46 @@
+diff --git src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
+index 45db172..feef8c5 100644
+--- src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
++++ src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java
+@@ -583,14 +583,16 @@ public class BeanPropertyWriter
+         throws Exception
+     {
+         Object value = get(bean);
+-        if (value == null) { // nulls need specialized handling
++        if (value == null) { 
+             if (_nullSerializer != null) {
+                 _nullSerializer.serialize(null, jgen, prov);
+-            } else { // can NOT suppress entries in tabular output
++            } else { 
+                 jgen.writeNull();
+             }
++// buggy code
++// 
++           return; 
+         }
+-        // otherwise find serializer to use
+         JsonSerializer<Object> ser = _serializer;
+         if (ser == null) {
+             Class<?> cls = value.getClass();
+@@ -600,19 +602,17 @@ public class BeanPropertyWriter
+                 ser = _findAndAddDynamic(map, cls, prov);
+             }
+         }
+-        // and then see if we must suppress certain values (default, empty)
+         if (_suppressableValue != null) {
+             if (MARKER_FOR_EMPTY == _suppressableValue) {
+-                if (ser.isEmpty(value)) { // can NOT suppress entries in tabular output
++                if (ser.isEmpty(value)) { 
+                     serializeAsPlaceholder(bean, jgen, prov);
+                     return;
+                 }
+-            } else if (_suppressableValue.equals(value)) { // can NOT suppress entries in tabular output
++            } else if (_suppressableValue.equals(value)) { 
+                 serializeAsPlaceholder(bean, jgen, prov);
+                 return;
+             }
+         }
+-        // For non-nulls: simple check for direct cycles
+         if (value == bean) {
+             _handleSelfReference(bean, ser);
+         }

@@ -1,0 +1,11 @@
+--- Lang26b/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2023-08-16 10:49:34.654806486 +0900
++++ Lang26b_Lang-26-patch0-tbar/src/main/java/org/apache/commons/lang3/time/FastDateFormat.java	2023-08-16 11:09:03.982828561 +0900
+@@ -817,7 +817,7 @@
+      * @return the formatted string
+      */
+     public String format(Date date) {
+-        Calendar c = new GregorianCalendar(mTimeZone);
++Calendar c = new GregorianCalendar(mTimeZone, this.mLocale);
+         c.setTime(date);
+         return applyRules(c, new StringBuffer(mMaxLengthEstimate)).toString();
+     }

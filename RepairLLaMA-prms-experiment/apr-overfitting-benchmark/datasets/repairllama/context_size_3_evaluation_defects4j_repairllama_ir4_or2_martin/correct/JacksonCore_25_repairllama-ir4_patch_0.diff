@@ -1,0 +1,44 @@
+diff --git src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+index 2c1f5a2..03526db 100644
+--- src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
++++ src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java
+@@ -1951,16 +1951,17 @@ public class ReaderBasedJsonParser // final in 2.3, earlier
+         char[] outBuf = _textBuffer.getCurrentSegment();
+         int outPtr = _textBuffer.getCurrentSegmentSize();
+         final int maxCode = codes.length;
+-
+         while (true) {
+             if (_inputPtr >= _inputEnd) {
+-                if (!_loadMore()) { // acceptable for now (will error out later)
++                if (!_loadMore()) { 
+                     break;
+                 }
+             }
+             char c = _inputBuffer[_inputPtr];
+             int i = (int) c;
+-            if (i <= maxCode) {
++// buggy code
++//             if (i <= maxCode) {
++           if (i < maxCode) {
+                 if (codes[i] != 0) {
+                     break;
+                 }
+@@ -1969,10 +1970,7 @@ public class ReaderBasedJsonParser // final in 2.3, earlier
+             }
+             ++_inputPtr;
+             hash = (hash * CharsToNameCanonicalizer.HASH_MULT) + i;
+-            // Ok, let's add char to output:
+             outBuf[outPtr++] = c;
+-
+-            // Need more room?
+             if (outPtr >= outBuf.length) {
+                 outBuf = _textBuffer.finishCurrentSegment();
+                 outPtr = 0;
+@@ -1984,7 +1982,6 @@ public class ReaderBasedJsonParser // final in 2.3, earlier
+             char[] buf = tb.getTextBuffer();
+             int start = tb.getTextOffset();
+             int len = tb.size();
+-
+             return _symbols.findSymbol(buf, start, len, hash);
+         }
+     }

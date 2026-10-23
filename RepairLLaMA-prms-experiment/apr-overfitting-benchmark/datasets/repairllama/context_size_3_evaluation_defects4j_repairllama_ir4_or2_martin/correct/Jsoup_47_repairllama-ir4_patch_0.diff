@@ -1,0 +1,56 @@
+diff --git src/main/java/org/jsoup/nodes/Entities.java src/main/java/org/jsoup/nodes/Entities.java
+index 08cf311..06b4129 100644
+--- src/main/java/org/jsoup/nodes/Entities.java
++++ src/main/java/org/jsoup/nodes/Entities.java
+@@ -78,7 +78,6 @@ public class Entities {
+     // this method is ugly, and does a lot. but other breakups cause rescanning and stringbuilder generations
+     static void escape(StringBuilder accum, String string, Document.OutputSettings out,
+                        boolean inAttribute, boolean normaliseWhite, boolean stripLeadingWhite) {
+-
+         boolean lastWasWhite = false;
+         boolean reachedNonWhite = false;
+         final EscapeMode escapeMode = out.escapeMode();
+@@ -86,11 +85,9 @@ public class Entities {
+         final CoreCharset coreCharset = CoreCharset.byName(encoder.charset().name());
+         final Map<Character, String> map = escapeMode.getMap();
+         final int length = string.length();
+-
+         int codePoint;
+         for (int offset = 0; offset < length; offset += Character.charCount(codePoint)) {
+             codePoint = string.codePointAt(offset);
+-
+             if (normaliseWhite) {
+                 if (StringUtil.isWhitespace(codePoint)) {
+                     if ((stripLeadingWhite && !reachedNonWhite) || lastWasWhite)
+@@ -103,10 +100,8 @@ public class Entities {
+                     reachedNonWhite = true;
+                 }
+             }
+-            // surrogate pairs, split implementation for efficiency on single char common case (saves creating strings, char[]):
+             if (codePoint < Character.MIN_SUPPLEMENTARY_CODE_POINT) {
+                 final char c = (char) codePoint;
+-                // html specific and required escapes:
+                 switch (c) {
+                     case '&':
+                         accum.append("&amp;");
+@@ -118,8 +113,9 @@ public class Entities {
+                             accum.append("&#xa0;");
+                         break;
+                     case '<':
+-                        // escape when in character data or when in a xml attribue val; not needed in html attr val
+-                        if (!inAttribute)
++// buggy code
++//                         if (!inAttribute)
++                       if (!inAttribute || escapeMode == EscapeMode.xhtml)
+                             accum.append("&lt;");
+                         else
+                             accum.append(c);
+@@ -146,7 +142,7 @@ public class Entities {
+                 }
+             } else {
+                 final String c = new String(Character.toChars(codePoint));
+-                if (encoder.canEncode(c)) // uses fallback encoder for simplicity
++                if (encoder.canEncode(c)) 
+                     accum.append(c);
+                 else
+                     accum.append("&#x").append(Integer.toHexString(codePoint)).append(';');

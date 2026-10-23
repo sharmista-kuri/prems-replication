@@ -1,0 +1,11 @@
+--- Chart11b/source/org/jfree/chart/util/ShapeUtilities.java	2024-09-26 15:52:30.687976721 +0900
++++ Chart11f_reward_repair/source/org/jfree/chart/util/ShapeUtilities.java
+@@ -272,7 +272,7 @@
+             return false;
+         }
+         PathIterator iterator1 = p1.getPathIterator(null);
+-        PathIterator iterator2 = p1.getPathIterator(null);
++PathIterator  iterator2  =  p2.getPathIterator(null);
+         double[] d1 = new double[6];
+         double[] d2 = new double[6];
+         boolean done = iterator1.isDone() && iterator2.isDone();

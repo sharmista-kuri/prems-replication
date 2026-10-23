@@ -1,0 +1,11 @@
+--- Mockito29b/src/org/mockito/internal/matchers/Same.java	2024-09-26 16:03:05.437900463 +0900
++++ Mockito29f_selfapr/src/org/mockito/internal/matchers/Same.java
+@@ -26,7 +26,7 @@
+     public void describeTo(Description description) {
+         description.appendText("same(");
+         appendQuoting(description);
+-        description.appendText(wanted.toString());
++if(wanted!=  null)  {  description.appendText(wanted.toString());  }
+         appendQuoting(description);
+         description.appendText(")");
+     }

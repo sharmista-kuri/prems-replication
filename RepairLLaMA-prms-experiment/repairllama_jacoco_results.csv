@@ -1,0 +1,195 @@
+bug_id,project,label,patch_file,fqcn,patched_lines,scope_mode,line_coverage,branch_coverage,patched_line_coverage,status
+Chart_11,Chart,1,Chart_11_repairllama-ir4_patch_0.diff,org.jfree.chart.util.ShapeUtilities,277,lines,0.4256,0.5603,1.0000,OK
+Chart_11,Chart,1,Chart_11_repairllama-ir4_patch_7.diff,org.jfree.chart.util.ShapeUtilities,277,lines,0.4256,0.5603,1.0000,OK
+Chart_11,Chart,1,Chart_11_repairllama-ir4_patch_8.diff,org.jfree.chart.util.ShapeUtilities,277;278,lines,0.4286,0.5603,1.0000,OK
+Chart_12,Chart,1,Chart_12_repairllama-ir4_patch_0.diff,org.jfree.chart.plot.MultiplePiePlot,147,lines,0.3632,0.2738,1.0000,OK
+Chart_1,Chart,1,Chart_1_repairllama-ir4_patch_0.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5105,0.4504,1.0000,OK
+Chart_20,Chart,1,Chart_20_repairllama-ir4_patch_0.diff,org.jfree.chart.plot.ValueMarker,97,lines,0.8636,0.875,1,OK
+Chart_26,Chart,1,Chart_26_repairllama-ir4_patch_0.diff,org.jfree.chart.axis.Axis,1191;1198,lines,0.8860,0.6923,0.5000,OK
+Chart_26,Chart,1,Chart_26_repairllama-ir4_patch_2.diff,org.jfree.chart.axis.Axis,1191;1198,lines,0.8860,0.6923,0.5000,OK
+Chart_26,Chart,1,Chart_26_repairllama-ir4_patch_3.diff,org.jfree.chart.axis.Axis,1191;1198,lines,0.8860,0.6923,0.5000,OK
+Chart_26,Chart,1,Chart_26_repairllama-ir4_patch_4.diff,org.jfree.chart.axis.Axis,1191;1198,lines,0.8860,0.6923,0.5000,OK
+Chart_26,Chart,1,Chart_26_repairllama-ir4_patch_5.diff,org.jfree.chart.axis.Axis,1191;1198,lines,0.8860,0.6923,0.5000,OK
+Chart_26,Chart,1,Chart_26_repairllama-ir4_patch_9.diff,org.jfree.chart.axis.Axis,1191;1198,lines,0.8860,0.6923,0.5000,OK
+Chart_4,Chart,1,Chart_4_repairllama-ir4_patch_0.diff,org.jfree.chart.plot.XYPlot,4492;4503,lines,0.7009,0.5870,1.0000,OK
+Chart_4,Chart,1,Chart_4_repairllama-ir4_patch_8.diff,org.jfree.chart.plot.XYPlot,4492;4503,lines,0.7009,0.5870,1.0000,OK
+Chart_4,Chart,1,Chart_4_repairllama-ir4_patch_9.diff,org.jfree.chart.plot.XYPlot,4492;4503,lines,0.7009,0.5870,1.0000,OK
+Chart_7,Chart,1,Chart_7_repairllama-ir4_patch_0.diff,org.jfree.data.time.TimePeriodValues,299;301,lines,0.8931,0.8519,1.0000,OK
+Chart_7,Chart,1,Chart_7_repairllama-ir4_patch_1.diff,org.jfree.data.time.TimePeriodValues,299;301,lines,0.8931,0.8519,1.0000,OK
+Chart_7,Chart,1,Chart_7_repairllama-ir4_patch_9.diff,org.jfree.data.time.TimePeriodValues,299;300;301,lines,0.8931,0.8519,1.0000,OK
+Chart_8,Chart,1,Chart_8_repairllama-ir4_patch_0.diff,org.jfree.data.time.Week,176,lines,0.4877,0.3088,1.0000,OK
+Chart_9,Chart,1,Chart_9_repairllama-ir4_patch_4.diff,org.jfree.data.time.TimeSeries,935;940;941;942;945,lines,0.7647,0.7462,0.8000,OK
+Chart_9,Chart,1,Chart_9_repairllama-ir4_patch_7.diff,org.jfree.data.time.TimeSeries,935;940;941;942;945,lines,0.7647,0.7462,0.8000,OK
+Chart_9,Chart,1,Chart_9_repairllama-ir4_patch_9.diff,org.jfree.data.time.TimeSeries,935;940;941;942;945,lines,0.7647,0.7462,0.8000,OK
+Closure_10,Closure,1,Closure_10_repairllama-ir4_patch_1.diff,com.google.javascript.jscomp.NodeUtil,1419,lines,0.9436,0.8911,1,OK
+Closure_115,Closure,1,Closure_115_repairllama-ir4_patch_1.diff,com.google.javascript.jscomp.FunctionInjector,695;737,lines,0.9659,0.8624,0.5,OK
+Closure_13,Closure,1,Closure_13_repairllama-ir4_patch_0.diff,com.google.javascript.jscomp.PeepholeOptimizationsPass,125,lines,0.9882,0.975,1,OK
+Closure_13,Closure,1,Closure_13_repairllama-ir4_patch_3.diff,com.google.javascript.jscomp.PeepholeOptimizationsPass,125,lines,0.9882,0.9750,1.0000,OK
+Closure_13,Closure,1,Closure_13_repairllama-ir4_patch_6.diff,com.google.javascript.jscomp.PeepholeOptimizationsPass,125,lines,0.9882,0.975,1,OK
+Closure_57,Closure,1,Closure_57_repairllama-ir4_patch_1.diff,com.google.javascript.jscomp.ClosureCodingConvention,199,lines,0.9928,0.8824,1,OK
+Closure_62,Closure,1,Closure_62_repairllama-ir4_patch_0.diff,com.google.javascript.jscomp.LightweightMessageFormatter,91,lines,1,0.8438,1,OK
+Closure_73,Closure,1,Closure_73_repairllama-ir4_patch_0.diff,com.google.javascript.jscomp.CodeGenerator,1005;1037,lines,0.9386,0.8151,0.5,OK
+Closure_86,Closure,1,Closure_86_repairllama-ir4_patch_1.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Lang_10,Lang,1,Lang_10_repairllama-ir4_patch_0.diff,org.apache.commons.lang3.time.FastDateParser,304;318,lines,0.9176,0.8537,0.5,OK
+Lang_33,Lang,1,Lang_33_repairllama-ir4_patch_1.diff,org.apache.commons.lang3.ClassUtils,912,lines,0.9510,0.9369,1.0000,OK
+Lang_43,Lang,1,Lang_43_repairllama-ir4_patch_0.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_43,Lang,1,Lang_43_repairllama-ir4_patch_6.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_45,Lang,1,Lang_45_repairllama-ir4_patch_4.diff,org.apache.commons.lang.WordUtils,613;614;615,lines,,,,COMPILE_FAIL
+Lang_51,Lang,1,Lang_51_repairllama-ir4_patch_2.diff,org.apache.commons.lang.BooleanUtils,678,lines,,,,COMPILE_FAIL
+Lang_59,Lang,1,Lang_59_repairllama-ir4_patch_2.diff,org.apache.commons.lang.text.StrBuilder,886,lines,,,,COMPILE_FAIL
+Math_11,Math,1,Math_11_repairllama-ir4_patch_0.diff,org.apache.commons.math3.distribution.MultivariateNormalDistribution,184,lines,0.8305,0.7857,1,OK
+Math_2,Math,1,Math_2_repairllama-ir4_patch_3.diff,org.apache.commons.math3.distribution.HypergeometricDistribution,270,lines,0.973,0.9615,1,OK
+Math_30,Math,1,Math_30_repairllama-ir4_patch_1.diff,org.apache.commons.math3.stat.inference.MannWhitneyUTest,174,lines,0.9118,1.0000,1.0000,OK
+Math_41,Math,1,Math_41_repairllama-ir4_patch_0.diff,org.apache.commons.math.stat.descriptive.moment.Variance,519,lines,0.9099,0.6957,1.0000,OK
+Math_41,Math,1,Math_41_repairllama-ir4_patch_5.diff,org.apache.commons.math.stat.descriptive.moment.Variance,519,lines,0.9099,0.6957,1.0000,OK
+Math_41,Math,1,Math_41_repairllama-ir4_patch_8.diff,org.apache.commons.math.stat.descriptive.moment.Variance,519,lines,0.9099,0.6957,1.0000,OK
+Math_50,Math,1,Math_50_repairllama-ir4_patch_4.diff,org.apache.commons.math.analysis.solvers.BaseSecantSolver,163,lines,0.9577,0.9348,0,OK
+Math_53,Math,1,Math_53_repairllama-ir4_patch_3.diff,org.apache.commons.math.complex.Complex,155;156;157,lines,0.9649,0.9322,0.6667,OK
+Math_57,Math,1,Math_57_repairllama-ir4_patch_0.diff,org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer,171,lines,0.9664,0.8889,1.0000,OK
+Math_58,Math,1,Math_58_repairllama-ir4_patch_5.diff,org.apache.commons.math.optimization.fitting.GaussianFitter,123,lines,0.7979,0.6207,1.0000,OK
+Math_59,Math,1,Math_59_repairllama-ir4_patch_2.diff,org.apache.commons.math.util.FastMath,3484,lines,0.8733,0.6798,1.0000,OK
+Math_69,Math,1,Math_69_repairllama-ir4_patch_8.diff,org.apache.commons.math.stat.correlation.PearsonsCorrelation,173,lines,0.9867,0.9000,1.0000,OK
+Math_70,Math,1,Math_70_repairllama-ir4_patch_1.diff,org.apache.commons.math.analysis.solvers.BisectionSolver,74,lines,0.9130,0.8333,1.0000,OK
+Math_70,Math,1,Math_70_repairllama-ir4_patch_8.diff,org.apache.commons.math.analysis.solvers.BisectionSolver,74,lines,0.9130,0.8333,1.0000,OK
+Math_75,Math,1,Math_75_repairllama-ir4_patch_2.diff,org.apache.commons.math.stat.Frequency,305,lines,0.8722,0.7708,1.0000,OK
+Math_79,Math,1,Math_79_repairllama-ir4_patch_0.diff,org.apache.commons.math.util.MathUtils,1628;1630,lines,1.0000,0.9738,1.0000,OK
+Math_79,Math,1,Math_79_repairllama-ir4_patch_8.diff,org.apache.commons.math.util.MathUtils,1628;1630,lines,1.0000,0.9738,1.0000,OK
+Math_80,Math,1,Math_80_repairllama-ir4_patch_0.diff,org.apache.commons.math.linear.EigenDecompositionImpl,1136,lines,0.9028,0.8285,1.0000,OK
+Math_82,Math,1,Math_82_repairllama-ir4_patch_0.diff,org.apache.commons.math.optimization.linear.SimplexSolver,84,lines,0.9667,0.9444,1.0000,OK
+Math_85,Math,1,Math_85_repairllama-ir4_patch_0.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8182,1.0000,OK
+Math_85,Math,1,Math_85_repairllama-ir4_patch_4.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8182,1.0000,OK
+Math_8,Math,1,Math_8_repairllama-ir4_patch_6.diff,org.apache.commons.math3.distribution.DiscreteDistribution,188;193,lines,0.875,0.75,0.5,OK
+Math_95,Math,1,Math_95_repairllama-ir4_patch_2.diff,org.apache.commons.math.distribution.FDistributionImpl,148;150;152,lines,1.0000,1.0000,0.6667,OK
+Mockito_29,Mockito,1,Mockito_29_repairllama-ir4_patch_4.diff,org.mockito.internal.matchers.Same,31,lines,,,,"JACOCO_REPORT_FAILED: nalyze(Report.java:110)
+	at org.jacoco.cli.internal.commands.Report.execute(Report.java:84)
+	at org.jacoco.cli.internal.Main.execute(Main.java:90)
+	at org.jacoco.cli.internal.Main.main(Main.java:105)
+"
+Mockito_38,Mockito,1,Mockito_38_repairllama-ir4_patch_4.diff,org.mockito.internal.verification.argumentmatching.ArgumentMatchingTool,50,lines,,,,"JACOCO_REPORT_FAILED: nalyze(Report.java:110)
+	at org.jacoco.cli.internal.commands.Report.execute(Report.java:84)
+	at org.jacoco.cli.internal.Main.execute(Main.java:90)
+	at org.jacoco.cli.internal.Main.main(Main.java:105)
+"
+Chart_11,Chart,0,Chart_11_repairllama-ir4_patch_6.diff,org.jfree.chart.util.ShapeUtilities,277;278,lines,0.4286,0.5603,1.0000,OK
+Chart_12,Chart,0,Chart_12_repairllama-ir4_patch_1.diff,org.jfree.chart.plot.MultiplePiePlot,147,lines,0.3632,0.2738,1.0000,OK
+Chart_13,Chart,0,Chart_13_repairllama-ir4_patch_1.diff,org.jfree.chart.block.BorderArrangement,457,lines,0.7031,0.6500,1.0000,OK
+Chart_13,Chart,0,Chart_13_repairllama-ir4_patch_3.diff,org.jfree.chart.block.BorderArrangement,457,lines,0.7031,0.6500,1.0000,OK
+Chart_13,Chart,0,Chart_13_repairllama-ir4_patch_5.diff,org.jfree.chart.block.BorderArrangement,457,lines,0.7031,0.6500,1.0000,OK
+Chart_13,Chart,0,Chart_13_repairllama-ir4_patch_6.diff,org.jfree.chart.block.BorderArrangement,457,lines,0.7031,0.6500,1.0000,OK
+Chart_13,Chart,0,Chart_13_repairllama-ir4_patch_8.diff,org.jfree.chart.block.BorderArrangement,457,lines,0.7031,0.6500,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_1.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5122,0.4549,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_2.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5122,0.4549,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_3.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5122,0.4549,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_5.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5105,0.4508,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_6.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5105,0.4508,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_7.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5105,0.4508,1.0000,OK
+Chart_1,Chart,0,Chart_1_repairllama-ir4_patch_9.diff,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,1799,lines,0.5122,0.4549,1.0000,OK
+Chart_26,Chart,0,Chart_26_repairllama-ir4_patch_8.diff,org.jfree.chart.axis.Axis,1185,lines,0.8847,0.6905,0,OK
+Chart_4,Chart,0,Chart_4_repairllama-ir4_patch_2.diff,org.jfree.chart.plot.XYPlot,4483;4494,lines,0.7018,0.5875,0.5,OK
+Chart_4,Chart,0,Chart_4_repairllama-ir4_patch_5.diff,org.jfree.chart.plot.XYPlot,4492;4493;4503,lines,0.7009,0.5878,1.0000,OK
+Chart_7,Chart,0,Chart_7_repairllama-ir4_patch_2.diff,org.jfree.data.time.TimePeriodValues,301,lines,0.8931,0.8519,1.0000,OK
+Chart_7,Chart,0,Chart_7_repairllama-ir4_patch_8.diff,org.jfree.data.time.TimePeriodValues,299,lines,0.8931,0.8519,1.0000,OK
+Chart_8,Chart,0,Chart_8_repairllama-ir4_patch_4.diff,org.jfree.data.time.Week,176,lines,0.4877,0.3088,1.0000,OK
+Chart_9,Chart,0,Chart_9_repairllama-ir4_patch_0.diff,org.jfree.data.time.TimeSeries,935;940;941;942;945,lines,0.7647,0.7422,0.8000,OK
+Chart_9,Chart,0,Chart_9_repairllama-ir4_patch_1.diff,org.jfree.data.time.TimeSeries,935;940;941;942;945,lines,0.7647,0.7422,0.8000,OK
+Closure_10,Closure,0,Closure_10_repairllama-ir4_patch_8.diff,com.google.javascript.jscomp.NodeUtil,1419,lines,0.9358,0.8842,1,OK
+Closure_62,Closure,0,Closure_62_repairllama-ir4_patch_5.diff,com.google.javascript.jscomp.LightweightMessageFormatter,91,lines,1,0.8438,1,OK
+Closure_73,Closure,0,Closure_73_repairllama-ir4_patch_3.diff,com.google.javascript.jscomp.CodeGenerator,1005;1037,lines,0.9386,0.8151,0.5,OK
+Closure_73,Closure,0,Closure_73_repairllama-ir4_patch_5.diff,com.google.javascript.jscomp.CodeGenerator,1005;1037,lines,0.9386,0.8151,0.5,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_0.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_4.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_5.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_6.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8747,1,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_7.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_8.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Closure_86,Closure,0,Closure_86_repairllama-ir4_patch_9.diff,com.google.javascript.jscomp.NodeUtil,2460,lines,0.9309,0.8767,1,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_0.diff,org.apache.commons.lang3.ClassUtils,912;915,lines,0.9512,0.9369,0.5000,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_2.diff,org.apache.commons.lang3.ClassUtils,912;913;914;915,lines,0.9514,0.9369,0.7500,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_3.diff,org.apache.commons.lang3.ClassUtils,912,lines,0.9510,0.9369,1.0000,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_4.diff,org.apache.commons.lang3.ClassUtils,912;913;916,lines,0.9514,0.9369,0.6667,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_5.diff,org.apache.commons.lang3.ClassUtils,912,lines,0.9510,0.9369,1.0000,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_6.diff,org.apache.commons.lang3.ClassUtils,912;913;914;915,lines,0.9514,0.9369,0.7500,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_7.diff,org.apache.commons.lang3.ClassUtils,912;913,lines,0.9512,0.9369,1.0000,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_8.diff,org.apache.commons.lang3.ClassUtils,912;913,lines,0.9512,0.9369,1.0000,OK
+Lang_33,Lang,0,Lang_33_repairllama-ir4_patch_9.diff,org.apache.commons.lang3.ClassUtils,912;915,lines,0.9512,0.9369,0.5000,OK
+Lang_43,Lang,0,Lang_43_repairllama-ir4_patch_1.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_43,Lang,0,Lang_43_repairllama-ir4_patch_2.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_43,Lang,0,Lang_43_repairllama-ir4_patch_4.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_43,Lang,0,Lang_43_repairllama-ir4_patch_5.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_43,Lang,0,Lang_43_repairllama-ir4_patch_9.diff,org.apache.commons.lang.text.ExtendedMessageFormat,424,lines,,,,COMPILE_FAIL
+Lang_45,Lang,0,Lang_45_repairllama-ir4_patch_1.diff,org.apache.commons.lang.WordUtils,613;614;615,lines,,,,COMPILE_FAIL
+Lang_45,Lang,0,Lang_45_repairllama-ir4_patch_8.diff,org.apache.commons.lang.WordUtils,613;614;615,lines,,,,COMPILE_FAIL
+Lang_45,Lang,0,Lang_45_repairllama-ir4_patch_9.diff,org.apache.commons.lang.WordUtils,613;614;615,lines,,,,COMPILE_FAIL
+Lang_51,Lang,0,Lang_51_repairllama-ir4_patch_0.diff,org.apache.commons.lang.BooleanUtils,678,lines,,,,COMPILE_FAIL
+Lang_51,Lang,0,Lang_51_repairllama-ir4_patch_3.diff,org.apache.commons.lang.BooleanUtils,678,lines,,,,COMPILE_FAIL
+Lang_51,Lang,0,Lang_51_repairllama-ir4_patch_5.diff,org.apache.commons.lang.BooleanUtils,678,lines,,,,COMPILE_FAIL
+Lang_51,Lang,0,Lang_51_repairllama-ir4_patch_9.diff,org.apache.commons.lang.BooleanUtils,678;679;680;681;682;683,lines,,,,COMPILE_FAIL
+Lang_58,Lang,0,Lang_58_repairllama-ir4_patch_1.diff,,,,,,,NO_FQCN
+Lang_59,Lang,0,Lang_59_repairllama-ir4_patch_6.diff,org.apache.commons.lang.text.StrBuilder,886,lines,,,,COMPILE_FAIL
+Lang_59,Lang,0,Lang_59_repairllama-ir4_patch_9.diff,org.apache.commons.lang.text.StrBuilder,886,lines,,,,COMPILE_FAIL
+Math_101,Math,0,Math_101_repairllama-ir4_patch_0.diff,org.apache.commons.math.complex.ComplexFormat,356,lines,,,,COMPILE_FAIL
+Math_101,Math,0,Math_101_repairllama-ir4_patch_2.diff,org.apache.commons.math.complex.ComplexFormat,356,lines,,,,COMPILE_FAIL
+Math_101,Math,0,Math_101_repairllama-ir4_patch_4.diff,org.apache.commons.math.complex.ComplexFormat,356,lines,,,,COMPILE_FAIL
+Math_11,Math,0,Math_11_repairllama-ir4_patch_1.diff,org.apache.commons.math3.distribution.MultivariateNormalDistribution,184,lines,0.8305,0.7857,1,OK
+Math_11,Math,0,Math_11_repairllama-ir4_patch_5.diff,org.apache.commons.math3.distribution.MultivariateNormalDistribution,184,lines,0.8305,0.7857,1,OK
+Math_11,Math,0,Math_11_repairllama-ir4_patch_6.diff,org.apache.commons.math3.distribution.MultivariateNormalDistribution,184,lines,0.8305,0.7857,1,OK
+Math_11,Math,0,Math_11_repairllama-ir4_patch_9.diff,org.apache.commons.math3.distribution.MultivariateNormalDistribution,184,lines,0.8305,0.7857,1,OK
+Math_28,Math,0,Math_28_repairllama-ir4_patch_2.diff,org.apache.commons.math3.optimization.linear.SimplexSolver,111,lines,1,1,0,OK
+Math_28,,0,Math_28_repairllama-ir4_patch_7.diff,,,,,,,EXCEPTION:Command 'mvn -q test-compile -Dmaven.compiler.source=1.8 -Dmaven.compiler.target=1.8' timed out afte
+Math_30,Math,0,Math_30_repairllama-ir4_patch_3.diff,org.apache.commons.math3.stat.inference.MannWhitneyUTest,174,lines,0.9118,1.0000,1.0000,OK
+Math_30,Math,0,Math_30_repairllama-ir4_patch_4.diff,org.apache.commons.math3.stat.inference.MannWhitneyUTest,174,lines,0.9118,1,1,OK
+Math_30,Math,0,Math_30_repairllama-ir4_patch_5.diff,org.apache.commons.math3.stat.inference.MannWhitneyUTest,174,lines,0.9118,1,1,OK
+Math_32,Math,0,Math_32_repairllama-ir4_patch_2.diff,org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet,136,lines,0.7365,0.625,1,OK
+Math_32,Math,0,Math_32_repairllama-ir4_patch_5.diff,org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet,136,lines,0.7365,0.622,1,OK
+Math_32,Math,0,Math_32_repairllama-ir4_patch_7.diff,org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet,136,lines,0.7365,0.625,1,OK
+Math_32,Math,0,Math_32_repairllama-ir4_patch_9.diff,org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet,136,lines,0.7365,0.625,1,OK
+Math_34,Math,0,Math_34_repairllama-ir4_patch_0.diff,org.apache.commons.math3.genetics.ListPopulation,211,lines,0.82,0.7727,1,OK
+Math_34,Math,0,Math_34_repairllama-ir4_patch_1.diff,org.apache.commons.math3.genetics.ListPopulation,211,lines,0.82,0.7727,1,OK
+Math_34,Math,0,Math_34_repairllama-ir4_patch_2.diff,org.apache.commons.math3.genetics.ListPopulation,211;212;213;214;215;216;218;219;220;221;222,lines,0.8302,0.7917,0.3636,OK
+Math_34,Math,0,Math_34_repairllama-ir4_patch_3.diff,org.apache.commons.math3.genetics.ListPopulation,211;212;213;214;215;216;218;219;220;221;222,lines,0.8302,0.7917,0.3636,OK
+Math_50,Math,0,Math_50_repairllama-ir4_patch_1.diff,org.apache.commons.math.analysis.solvers.BaseSecantSolver,169,lines,0.9589,0.9375,1.0000,OK
+Math_50,Math,0,Math_50_repairllama-ir4_patch_5.diff,org.apache.commons.math.analysis.solvers.BaseSecantSolver,168;169;170,lines,0.9315,0.9167,0.3333,OK
+Math_50,Math,0,Math_50_repairllama-ir4_patch_6.diff,org.apache.commons.math.analysis.solvers.BaseSecantSolver,168;169;170,lines,0.9315,0.9167,0.3333,OK
+Math_53,Math,0,Math_53_repairllama-ir4_patch_7.diff,org.apache.commons.math.complex.Complex,155;156;157,lines,0.9649,0.9310,0.6667,OK
+Math_57,Math,0,Math_57_repairllama-ir4_patch_1.diff,org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer,171,lines,0.9664,0.8889,1.0000,OK
+Math_57,Math,0,Math_57_repairllama-ir4_patch_4.diff,org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer,171,lines,0.9664,0.8889,1.0000,OK
+Math_57,Math,0,Math_57_repairllama-ir4_patch_5.diff,org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer,171,lines,0.9664,0.8889,1.0000,OK
+Math_59,Math,0,Math_59_repairllama-ir4_patch_1.diff,org.apache.commons.math.util.FastMath,3484,lines,0.8733,0.6798,1.0000,OK
+Math_59,Math,0,Math_59_repairllama-ir4_patch_7.diff,org.apache.commons.math.util.FastMath,3484,lines,0.8733,0.6798,1.0000,OK
+Math_59,Math,0,Math_59_repairllama-ir4_patch_8.diff,org.apache.commons.math.util.FastMath,3484,lines,0.8733,0.6798,1.0000,OK
+Math_79,Math,0,Math_79_repairllama-ir4_patch_2.diff,org.apache.commons.math.util.MathUtils,1628;1630,lines,1.0000,0.9738,1.0000,OK
+Math_79,Math,0,Math_79_repairllama-ir4_patch_3.diff,org.apache.commons.math.util.MathUtils,1628;1630,lines,1.0000,0.9738,1.0000,OK
+Math_79,Math,0,Math_79_repairllama-ir4_patch_7.diff,org.apache.commons.math.util.MathUtils,1628;1630,lines,1.0000,0.9738,1.0000,OK
+Math_80,Math,0,Math_80_repairllama-ir4_patch_7.diff,org.apache.commons.math.linear.EigenDecompositionImpl,1136,lines,0.9028,0.8285,1.0000,OK
+Math_82,Math,0,Math_82_repairllama-ir4_patch_5.diff,org.apache.commons.math.optimization.linear.SimplexSolver,84,lines,0.9667,0.9444,1.0000,OK
+Math_84,Math,0,Math_84_repairllama-ir4_patch_1.diff,org.apache.commons.math.optimization.direct.MultiDirectional,63;97,lines,1,1,0.5,OK
+Math_84,Math,0,Math_84_repairllama-ir4_patch_3.diff,org.apache.commons.math.optimization.direct.MultiDirectional,95,lines,0.9706,0.9000,1.0000,OK
+Math_85,Math,0,Math_85_repairllama-ir4_patch_3.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8182,1.0000,OK
+Math_85,Math,0,Math_85_repairllama-ir4_patch_5.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8333,1.0000,OK
+Math_85,Math,0,Math_85_repairllama-ir4_patch_6.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8333,1.0000,OK
+Math_85,Math,0,Math_85_repairllama-ir4_patch_7.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8333,1.0000,OK
+Math_85,Math,0,Math_85_repairllama-ir4_patch_8.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8333,1.0000,OK
+Math_85,Math,0,Math_85_repairllama-ir4_patch_9.diff,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,196,lines,0.9143,0.8333,1.0000,OK
+Math_95,Math,0,Math_95_repairllama-ir4_patch_3.diff,org.apache.commons.math.distribution.FDistributionImpl,148;150;152,lines,1.0000,1.0000,0.6667,OK
+Math_95,Math,0,Math_95_repairllama-ir4_patch_6.diff,org.apache.commons.math.distribution.FDistributionImpl,148,lines,1.0000,1.0000,1.0000,OK
+Math_95,Math,0,Math_95_repairllama-ir4_patch_7.diff,org.apache.commons.math.distribution.FDistributionImpl,148;150;152,lines,1.0000,1.0000,0.6667,OK
+Mockito_29,Mockito,0,Mockito_29_repairllama-ir4_patch_2.diff,org.mockito.internal.matchers.Same,31,lines,,,,"JACOCO_REPORT_FAILED: nalyze(Report.java:110)
+	at org.jacoco.cli.internal.commands.Report.execute(Report.java:84)
+	at org.jacoco.cli.internal.Main.execute(Main.java:90)
+	at org.jacoco.cli.internal.Main.main(Main.java:105)
+"
+Mockito_38,Mockito,0,Mockito_38_repairllama-ir4_patch_8.diff,org.mockito.internal.verification.argumentmatching.ArgumentMatchingTool,50;52;53;54,lines,,,,"JACOCO_REPORT_FAILED: nalyze(Report.java:110)
+	at org.jacoco.cli.internal.commands.Report.execute(Report.java:84)
+	at org.jacoco.cli.internal.Main.execute(Main.java:90)
+	at org.jacoco.cli.internal.Main.main(Main.java:105)
+"
+Time_7,Time,0,Time_7_repairllama-ir4_patch_1.diff,org.joda.time.format.DateTimeFormatter,711,lines,,,,"JACOCO_REPORT_FAILED: nalyze(Report.java:110)
+	at org.jacoco.cli.internal.commands.Report.execute(Report.java:84)
+	at org.jacoco.cli.internal.Main.execute(Main.java:90)
+	at org.jacoco.cli.internal.Main.main(Main.java:105)
+"
+Time_7,Time,0,Time_7_repairllama-ir4_patch_9.diff,org.joda.time.format.DateTimeFormatter,711;712;713;714;716,lines,,,,"JACOCO_REPORT_FAILED: nalyze(Report.java:110)
+	at org.jacoco.cli.internal.commands.Report.execute(Report.java:84)
+	at org.jacoco.cli.internal.Main.execute(Main.java:90)
+	at org.jacoco.cli.internal.Main.main(Main.java:105)
+"

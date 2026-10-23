@@ -1,0 +1,24 @@
+diff --git src/com/google/javascript/jscomp/TypedScopeCreator.java src/com/google/javascript/jscomp/TypedScopeCreator.java
+index 210bb66..f3634ee 100644
+--- src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -1742,7 +1742,9 @@ final class TypedScopeCreator implements ScopeCreator {
+           for (Node astParameter : astParameters.children()) {
+             if (jsDocParameter != null) {
+               defineSlot(astParameter, functionNode,
+-                  jsDocParameter.getJSType(), true);
++// buggy code
++//                   jsDocParameter.getJSType(), true);
++               jsDocParameter.getJSType(), false);
+               jsDocParameter = jsDocParameter.getNext();
+             } else {
+               defineSlot(astParameter, functionNode, null, true);
+@@ -1750,7 +1752,7 @@ final class TypedScopeCreator implements ScopeCreator {
+           }
+         }
+       }
+-    } // end declareArguments
++    } 
+   } // end LocalScopeBuilder
+ 
+ 

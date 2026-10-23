@@ -1,0 +1,11 @@
+--- Math32b/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java	2024-09-26 16:21:21.392822007 +0900
++++ Math32f_coconut/src/main/java/org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java
+@@ -133,7 +133,7 @@
+ 
+         if (v.length == 0) {
+             final BSPTree<Euclidean2D> tree = getTree(false);
+-            if ((Boolean) tree.getAttribute()) {
++if( tree.getAttribute( ) == null ) {
+                 // the instance covers the whole space
+                 setSize(Double.POSITIVE_INFINITY);
+                 setBarycenter(Vector2D.NaN);

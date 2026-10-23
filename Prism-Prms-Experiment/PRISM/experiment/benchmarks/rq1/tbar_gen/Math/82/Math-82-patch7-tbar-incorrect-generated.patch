@@ -1,0 +1,11 @@
+--- Math82b/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2023-08-16 10:49:34.142794009 +0900
++++ Math82b_Math-82-patch7-tbar/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2023-08-16 11:09:03.506814785 +0900
+@@ -79,7 +79,7 @@
+         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {
+             final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);
+             final double entry = tableau.getEntry(i, col);
+-            if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {
++if (entry > DEFAULT_EPSILON && (MathUtils.compareTo(entry, 0, epsilon) >= 0)) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+                     minRatio = ratio;

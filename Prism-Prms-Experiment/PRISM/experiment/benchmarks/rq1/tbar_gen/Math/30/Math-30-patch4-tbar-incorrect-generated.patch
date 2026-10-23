@@ -1,0 +1,11 @@
+--- Math30b/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java	2023-08-16 10:49:32.370750824 +0900
++++ Math30b_Math-30-patch4-tbar/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java	2023-08-16 11:09:01.758764184 +0900
+@@ -174,7 +174,7 @@
+ 
+         // http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U#Normal_approximation
+         final double EU = n1n2prod / 2.0;
+-        final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;
++final double VarU = n1n2prod * ((n1 + n2 + 1) / 12.0);
+ 
+         final double z = (Umin - EU) / FastMath.sqrt(VarU);
+ 

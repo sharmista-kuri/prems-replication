@@ -1,0 +1,31 @@
+diff --git src/java/org/apache/commons/cli/PosixParser.java src/java/org/apache/commons/cli/PosixParser.java
+index cafcede..221a60c 100644
+--- src/java/org/apache/commons/cli/PosixParser.java
++++ src/java/org/apache/commons/cli/PosixParser.java
+@@ -284,22 +284,23 @@ public class PosixParser extends Parser {
+         for (int i = 1; i < token.length(); i++)
+         {
+             String ch = String.valueOf(token.charAt(i));
+-
+             if (options.hasOption(ch))
+             {
+                 tokens.add("-" + ch);
+                 currentOption = options.getOption(ch);
+-
+                 if (currentOption.hasArg() && (token.length() != (i + 1)))
+                 {
+                     tokens.add(token.substring(i + 1));
+-
+                     break;
+                 }
+             }
+             else if (stopAtNonOption)
+             {
+                 process(token.substring(i));
++// buggy code
++// 
++               currentOption = null;
++                return;
+             }
+             else
+             {

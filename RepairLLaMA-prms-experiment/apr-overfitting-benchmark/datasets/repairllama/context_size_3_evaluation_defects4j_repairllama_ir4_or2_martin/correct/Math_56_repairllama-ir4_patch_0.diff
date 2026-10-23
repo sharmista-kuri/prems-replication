@@ -1,0 +1,39 @@
+diff --git src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java
+index 56c9ffe..de88028 100644
+--- src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java
++++ src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java
+@@ -218,9 +218,7 @@ public class MultidimensionalCounter implements Iterable<Integer> {
+             index >= totalSize) {
+             throw new OutOfRangeException(index, 0, totalSize);
+         }
+-
+         final int[] indices = new int[dimension];
+-
+         int count = 0;
+         for (int i = 0; i < last; i++) {
+             int idx = 0;
+@@ -233,15 +231,15 @@ public class MultidimensionalCounter implements Iterable<Integer> {
+             count -= offset;
+             indices[i] = idx;
+         }
+-
+-        int idx = 1;
+-        while (count < index) {
+-            count += idx;
+-            ++idx;
+-        }
+-        --idx;
+-        indices[last] = idx;
+-
++// buggy code
++//         int idx = 1;
++//         while (count < index) {
++//             count += idx;
++//             ++idx;
++//         }
++//         --idx;
++//         indices[last] = idx;
++       indices[last] = index - count;
+         return indices;
+     }
+ 

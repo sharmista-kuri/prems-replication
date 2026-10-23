@@ -1,0 +1,11 @@
+--- Chart1b/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2023-08-16 10:46:03.765646716 +0900
++++ Chart1b_Chart-1-patch2-tbar/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2023-08-16 15:50:26.850942037 +0900
+@@ -1794,7 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++if (getBaseItemLabelGenerator() != null) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

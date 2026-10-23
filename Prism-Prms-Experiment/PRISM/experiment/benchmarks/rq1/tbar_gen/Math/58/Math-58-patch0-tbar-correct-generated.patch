@@ -1,0 +1,11 @@
+--- Math58b/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java	2023-08-15 13:14:28.816011307 +0900
++++ Math58b_Math-58-patch0-tbar/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java	2023-08-16 15:50:26.758939561 +0900
+@@ -118,7 +118,7 @@
+      */
+     public double[] fit() {
+         final double[] guess = (new ParameterGuesser(getObservations())).guess();
+-        return fit(new Gaussian.Parametric(), guess);
++return fit(guess);
+     }
+ 
+     /**

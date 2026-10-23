@@ -1,0 +1,15 @@
+diff --git src/main/java/org/apache/commons/math/util/FastMath.java src/main/java/org/apache/commons/math/util/FastMath.java
+index 92ca768..92a8625 100644
+--- src/main/java/org/apache/commons/math/util/FastMath.java
++++ src/main/java/org/apache/commons/math/util/FastMath.java
+@@ -3479,7 +3479,9 @@ public class FastMath {
+      * @return b if a is lesser or equal to b, a otherwise
+      */
+     public static float max(final float a, final float b) {
+-        return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : b);
++// buggy code
++//         return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : b);
++       return (b >= a) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
+     }
+ 
+     /** Compute the maximum of two values

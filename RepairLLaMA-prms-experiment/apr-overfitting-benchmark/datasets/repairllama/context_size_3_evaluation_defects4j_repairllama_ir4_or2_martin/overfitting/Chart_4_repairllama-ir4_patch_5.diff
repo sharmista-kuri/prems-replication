@@ -1,0 +1,83 @@
+diff --git source/org/jfree/chart/plot/XYPlot.java source/org/jfree/chart/plot/XYPlot.java
+index 7fe53f5..aecf193 100644
+--- source/org/jfree/chart/plot/XYPlot.java
++++ source/org/jfree/chart/plot/XYPlot.java
+@@ -4423,20 +4423,16 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable,
+      * @return The range.
+      */
+     public Range getDataRange(ValueAxis axis) {
+-
+         Range result = null;
+         List mappedDatasets = new ArrayList();
+         List includedAnnotations = new ArrayList();
+         boolean isDomainAxis = true;
+-
+-        // is it a domain axis?
+         int domainIndex = getDomainAxisIndex(axis);
+         if (domainIndex >= 0) {
+             isDomainAxis = true;
+             mappedDatasets.addAll(getDatasetsMappedToDomainAxis(
+                     new Integer(domainIndex)));
+             if (domainIndex == 0) {
+-                // grab the plot's annotations
+                 Iterator iterator = this.annotations.iterator();
+                 while (iterator.hasNext()) {
+                     XYAnnotation annotation = (XYAnnotation) iterator.next();
+@@ -4446,8 +4442,6 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable,
+                 }
+             }
+         }
+-
+-        // or is it a range axis?
+         int rangeIndex = getRangeAxisIndex(axis);
+         if (rangeIndex >= 0) {
+             isDomainAxis = false;
+@@ -4463,9 +4457,6 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable,
+                 }
+             }
+         }
+-
+-        // iterate through the datasets that map to the axis and get the union
+-        // of the ranges.
+         Iterator iterator = mappedDatasets.iterator();
+         while (iterator.hasNext()) {
+             XYDataset d = (XYDataset) iterator.next();
+@@ -4489,8 +4480,17 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable,
+                                 DatasetUtilities.findRangeBounds(d));
+                     }
+                 }
+-                
+-                    Collection c = r.getAnnotations();
++// buggy code
++//                     Collection c = r.getAnnotations();
++//                     Iterator i = c.iterator();
++//                     while (i.hasNext()) {
++//                         XYAnnotation a = (XYAnnotation) i.next();
++//                         if (a instanceof XYAnnotationBoundsInfo) {
++//                             includedAnnotations.add(a);
++//                         }
++//                     }
++               Collection c = r != null ? r.getAnnotations() : null;
++                if (c != null) {
+                     Iterator i = c.iterator();
+                     while (i.hasNext()) {
+                         XYAnnotation a = (XYAnnotation) i.next();
+@@ -4500,7 +4500,7 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable,
+                     }
+                 }
+             }
+-
++        }
+         Iterator it = includedAnnotations.iterator();
+         while (it.hasNext()) {
+             XYAnnotationBoundsInfo xyabi = (XYAnnotationBoundsInfo) it.next();
+@@ -4513,9 +4513,7 @@ public class XYPlot extends Plot implements ValueAxisPlot, Pannable,
+                 }
+             }
+         }
+-
+         return result;
+-
+     }
+ 
+     /**

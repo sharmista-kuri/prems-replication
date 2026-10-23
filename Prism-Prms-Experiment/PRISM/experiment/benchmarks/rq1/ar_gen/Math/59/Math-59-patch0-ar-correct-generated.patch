@@ -1,0 +1,11 @@
+--- Math59b/src/main/java/org/apache/commons/math/util/FastMath.java	2024-02-28 11:18:55.312114945 +0900
++++ Math59b_Math-59-patch0-ar/src/main/java/org/apache/commons/math/util/FastMath.java	2024-02-28 11:18:55.368115964 +0900
+@@ -3479,7 +3479,7 @@
+      * @return b if a is lesser or equal to b, a otherwise
+      */
+     public static float max(final float a, final float b) {
+-        return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : b);
++return (a <= b) ? b : (Float.isNaN(a + b) ? Float.NaN : a);
+     }
+ 
+     /** Compute the maximum of two values

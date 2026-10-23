@@ -1,0 +1,11 @@
+--- Mockito26b/src/org/mockito/internal/util/Primitives.java	2024-09-26 16:28:21.001889061 +0900
++++ Mockito26f_cure/src/org/mockito/internal/util/Primitives.java
+@@ -63,6 +63,6 @@
+         primitiveValues.put(int.class, 0);
+         primitiveValues.put(long.class, 0L);
+         primitiveValues.put(float.class, 0F);
+-        primitiveValues.put(double.class, 0);
++primitiveValues.put( double.class ,0.0) ;
+     }
+ }
+\ No newline at end of file

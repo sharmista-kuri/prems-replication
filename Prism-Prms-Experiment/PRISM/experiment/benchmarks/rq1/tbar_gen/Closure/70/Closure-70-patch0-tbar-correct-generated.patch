@@ -1,0 +1,11 @@
+--- Closure70b/src/com/google/javascript/jscomp/TypedScopeCreator.java	2023-08-16 10:49:31.922739906 +0900
++++ Closure70b_Closure-70-patch0-tbar/src/com/google/javascript/jscomp/TypedScopeCreator.java	2023-08-16 15:50:27.062947742 +0900
+@@ -1742,7 +1742,7 @@
+           for (Node astParameter : astParameters.children()) {
+             if (jsDocParameter != null) {
+               defineSlot(astParameter, functionNode,
+-                  jsDocParameter.getJSType(), true);
++                  jsDocParameter.getJSType(), false);
+               jsDocParameter = jsDocParameter.getNext();
+             } else {
+               defineSlot(astParameter, functionNode, null, true);

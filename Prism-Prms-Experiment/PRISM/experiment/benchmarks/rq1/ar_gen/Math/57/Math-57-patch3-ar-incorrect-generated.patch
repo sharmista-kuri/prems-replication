@@ -1,0 +1,11 @@
+--- Math57b/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2024-02-28 11:18:25.387571320 +0900
++++ Math57b_Math-57-patch3-ar/src/main/java/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2024-02-28 11:18:25.483573061 +0900
+@@ -178,7 +178,7 @@
+                 final Cluster<T> nearest = getNearestCluster(resultSet, p);
+                 final double d = p.distanceFrom(nearest.getCenter());
+                 sum += d * d;
+-                dx2[i] = sum;
++dx2[i] += d * d;sum++;;
+             }
+ 
+             // Add one new data point as a center. Each point x is chosen with

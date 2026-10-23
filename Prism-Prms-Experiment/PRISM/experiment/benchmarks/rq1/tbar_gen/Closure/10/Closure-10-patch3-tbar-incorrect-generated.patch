@@ -1,0 +1,11 @@
+--- Closure10b/src/com/google/javascript/jscomp/NodeUtil.java	2023-08-15 13:24:00.929609286 +0900
++++ Closure10b_Closure-10-patch3-tbar/src/com/google/javascript/jscomp/NodeUtil.java	2023-08-16 15:50:27.034946989 +0900
+@@ -1409,7 +1409,7 @@
+    * @returns Whether the results is possibly a string.
+    */
+   static boolean mayBeString(Node n) {
+-    return mayBeString(n, true);
++return mayBeString(n, false);
+   }
+ 
+   static boolean mayBeString(Node n, boolean recurse) {

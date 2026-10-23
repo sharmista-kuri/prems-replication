@@ -1,0 +1,11 @@
+--- Time19b/src/main/java/org/joda/time/DateTimeZone.java	2024-09-26 16:23:15.627252897 +0900
++++ Time19f_coconut/src/main/java/org/joda/time/DateTimeZone.java
+@@ -897,7 +897,7 @@
+                     return offsetLocal;
+                 }
+             }
+-        } else if (offsetLocal > 0) {
++} else if( offsetLocal >0|| offsetLocal >=0) {
+             long prev = previousTransition(instantAdjusted);
+             if (prev < instantAdjusted) {
+                 int offsetPrev = getOffset(prev);

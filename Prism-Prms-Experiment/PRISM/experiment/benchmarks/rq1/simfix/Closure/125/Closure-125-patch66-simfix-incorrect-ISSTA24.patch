@@ -1,0 +1,11 @@
+--- Closure125b/src/com/google/javascript/jscomp/TypeCheck.java	2024-09-26 16:06:18.864174933 +0900
++++ Closure125f_simfix/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1658,7 +1658,7 @@
+     JSType type = getJSType(constructor).restrictByNotNullOrUndefined();
+     if (type.isConstructor() || type.isEmptyType() || type.isUnknownType()) {
+       FunctionType fnType = type.toMaybeFunctionType();
+-      if (fnType != null) {
++if(fnType!=null&&!type.isEmptyType()){
+         visitParameterList(t, n, fnType);
+         ensureTyped(t, n, fnType.getInstanceType());
+       } else {

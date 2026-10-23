@@ -1,0 +1,54 @@
+diff --git src/com/google/javascript/jscomp/NodeUtil.java src/com/google/javascript/jscomp/NodeUtil.java
+index dd78f90..c850a3c 100644
+--- src/com/google/javascript/jscomp/NodeUtil.java
++++ src/com/google/javascript/jscomp/NodeUtil.java
+@@ -2424,9 +2424,6 @@ public final class NodeUtil {
+   static boolean evaluatesToLocalValue(Node value, Predicate<Node> locals) {
+     switch (value.getType()) {
+       case Token.ASSIGN:
+-        // A result that is aliased by a non-local name, is the effectively the
+-        // same as returning a non-local name, but this doesn't matter if the
+-        // value is immutable.
+         return NodeUtil.isImmutableValue(value.getLastChild())
+             || (locals.apply(value)
+                 && evaluatesToLocalValue(value.getLastChild(), locals));
+@@ -2452,36 +2449,28 @@ public final class NodeUtil {
+         return isImmutableValue(value) || locals.apply(value);
+       case Token.GETELEM:
+       case Token.GETPROP:
+-        // There is no information about the locality of object properties.
+         return locals.apply(value);
+       case Token.CALL:
+         return callHasLocalResult(value)
+             || isToStringMethodCall(value)
+             || locals.apply(value);
+       case Token.NEW:
+-        // TODO(nicksantos): This needs to be changed so that it
+-        // returns true iff we're sure the value was never aliased from inside
+-        // the constructor (similar to callHasLocalResult)
+-        return true;
++// buggy code
++//         return true;
++       return NodeUtil.isImmutableValue(value);
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:
+       case Token.OBJECTLIT:
+-        // Literals objects with non-literal children are allowed.
+         return true;
+       case Token.IN:
+-        // TODO(johnlenz): should IN operator be included in #isSimpleOperator?
+         return true;
+       default:
+-        // Other op force a local value:
+-        //  x = '' + g (x is now an local string)
+-        //  x -= g (x is now an local number)
+         if (isAssignmentOp(value)
+             || isSimpleOperator(value)
+             || isImmutableValue(value)) {
+           return true;
+         }
+-
+         throw new IllegalStateException(
+             "Unexpected expression node" + value +
+             "\n parent:" + value.getParent());

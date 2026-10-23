@@ -1,0 +1,62 @@
+diff --git source/org/jfree/chart/axis/Axis.java source/org/jfree/chart/axis/Axis.java
+index ce6f5ca..830b362 100644
+--- source/org/jfree/chart/axis/Axis.java
++++ source/org/jfree/chart/axis/Axis.java
+@@ -1092,16 +1092,12 @@ public abstract class Axis implements Cloneable, Serializable {
+     protected AxisState drawLabel(String label, Graphics2D g2, 
+             Rectangle2D plotArea, Rectangle2D dataArea, RectangleEdge edge, 
+             AxisState state, PlotRenderingInfo plotState) {
+-
+-        // it is unlikely that 'state' will be null, but check anyway...
+         if (state == null) {
+             throw new IllegalArgumentException("Null 'state' argument.");
+         }
+-        
+         if ((label == null) || (label.equals(""))) {
+             return state;
+         }
+-
+         Font font = getLabelFont();
+         RectangleInsets insets = getLabelInsets();
+         g2.setFont(font);
+@@ -1109,7 +1105,6 @@ public abstract class Axis implements Cloneable, Serializable {
+         FontMetrics fm = g2.getFontMetrics();
+         Rectangle2D labelBounds = TextUtilities.getTextBounds(label, g2, fm);
+         Shape hotspot = null;
+-        
+         if (edge == RectangleEdge.TOP) {
+             AffineTransform t = AffineTransform.getRotateInstance(
+                     getLabelAngle(), labelBounds.getCenterX(), 
+@@ -1166,7 +1161,6 @@ public abstract class Axis implements Cloneable, Serializable {
+                     + insets.getRight());
+         }
+         else if (edge == RectangleEdge.RIGHT) {
+-
+             AffineTransform t = AffineTransform.getRotateInstance(
+                     getLabelAngle() + Math.PI / 2.0, 
+                     labelBounds.getCenterX(), labelBounds.getCenterY());
+@@ -1185,18 +1179,17 @@ public abstract class Axis implements Cloneable, Serializable {
+                     labely - h / 2.0f, w, h);
+             state.cursorRight(insets.getLeft() + labelBounds.getWidth() 
+                     + insets.getRight());
+-
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
+-                EntityCollection entities = owner.getEntityCollection();
+-                if (entities != null) {
+-                    entities.add(new AxisLabelEntity(this, hotspot, 
+-                            this.labelToolTip, this.labelURL));
+-                }
++// buggy code
++//                 EntityCollection entities = owner.getEntityCollection();
++//                 if (entities != null) {
++//                     entities.add(new AxisLabelEntity(this, hotspot, 
++//                             this.labelToolTip, this.labelURL));
++//                 }
+         }
+         return state;
+-
+     }
+ 
+     /**

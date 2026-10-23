@@ -1,0 +1,11 @@
+--- Math105b/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java	2024-09-26 15:56:38.014180415 +0900
++++ Math105f_reward_repair/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java
+@@ -261,7 +261,7 @@
+      * @return sum of squared errors associated with the regression model
+      */
+     public double getSumSquaredErrors() {
+-        return sumYY - sumXY * sumXY / sumXX;
++return  Math.abs(sumYY  -  sumXY  *  sumXY  /  sumXX);
+     }
+ 
+     /**

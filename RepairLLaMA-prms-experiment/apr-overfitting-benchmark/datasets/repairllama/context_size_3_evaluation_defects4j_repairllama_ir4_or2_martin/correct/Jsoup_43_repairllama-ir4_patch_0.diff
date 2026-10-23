@@ -1,0 +1,18 @@
+diff --git src/main/java/org/jsoup/nodes/Element.java src/main/java/org/jsoup/nodes/Element.java
+index f1ae8dd..e0876c7 100644
+--- src/main/java/org/jsoup/nodes/Element.java
++++ src/main/java/org/jsoup/nodes/Element.java
+@@ -568,10 +568,11 @@ public class Element extends Node {
+     private static <E extends Element> Integer indexInList(Element search, List<E> elements) {
+         Validate.notNull(search);
+         Validate.notNull(elements);
+-
+         for (int i = 0; i < elements.size(); i++) {
+             E element = elements.get(i);
+-            if (element.equals(search))
++// buggy code
++//             if (element.equals(search))
++           if (element == search)
+                 return i;
+         }
+         return null;

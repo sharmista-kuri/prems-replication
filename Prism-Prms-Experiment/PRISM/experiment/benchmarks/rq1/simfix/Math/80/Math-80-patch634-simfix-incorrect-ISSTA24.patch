@@ -1,0 +1,11 @@
+--- Math80b/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2024-09-26 16:07:58.981627914 +0900
++++ Math80f_simfix/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java
+@@ -1133,7 +1133,7 @@
+         if (1.5 * work[pingPong] < work[4 * (n - 1) + pingPong]) {
+             // flip array
+             int j = 4 * n - 1;
+-            for (int i = 0; i < j; i += 4) {
++for(int i=0;i<pingPong;i+=4){
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+                     work[i + k] = work[j - k];

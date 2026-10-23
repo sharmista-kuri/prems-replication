@@ -1,0 +1,27 @@
+diff --git src/java/org/apache/commons/lang/BooleanUtils.java src/java/org/apache/commons/lang/BooleanUtils.java
+index 3fda4ec..30c04f5 100644
+--- src/java/org/apache/commons/lang/BooleanUtils.java
++++ src/java/org/apache/commons/lang/BooleanUtils.java
+@@ -647,12 +647,6 @@ public class BooleanUtils {
+      * @return the boolean value of the string, <code>false</code> if no match
+      */
+     public static boolean toBoolean(String str) {
+-        // Previously used equalsIgnoreCase, which was fast for interned 'true'.
+-        // Non interned 'true' matched 15 times slower.
+-        // 
+-        // Optimisation provides same performance as before for interned 'true'.
+-        // Similar performance for null, 'false', and other strings not length 2/3/4.
+-        // 'true'/'TRUE' match 4 times slower, 'tRUE'/'True' 7 times slower.
+         if (str == "true") {
+             return true;
+         }
+@@ -679,6 +673,9 @@ public class BooleanUtils {
+                         (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+                         (str.charAt(2) == 'S' || str.charAt(2) == 's');
+                 }
++// buggy code
++// 
++               return false;
+             }
+             case 4: {
+                 char ch = str.charAt(0);

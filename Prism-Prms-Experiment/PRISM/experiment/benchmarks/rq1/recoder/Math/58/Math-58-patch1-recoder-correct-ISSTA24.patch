@@ -1,0 +1,12 @@
+--- Math58b/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java	2024-09-26 15:28:30.588528347 +0900
++++ Math58f_recoder/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java
+@@ -118,8 +118,7 @@
+      */
+     public double[] fit() {
+         final double[] guess = (new ParameterGuesser(getObservations())).guess();
+-        return fit(new Gaussian.Parametric(), guess);
+-    }
++return fit(guess);    }
+ 
+     /**
+      * Guesses the parameters {@code norm}, {@code mean}, and {@code sigma}

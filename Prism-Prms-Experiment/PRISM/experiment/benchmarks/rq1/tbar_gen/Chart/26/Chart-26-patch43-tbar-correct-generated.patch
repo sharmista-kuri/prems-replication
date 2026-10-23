@@ -1,0 +1,18 @@
+--- Chart26b/source/org/jfree/chart/axis/Axis.java	2023-08-15 13:34:05.944620393 +0900
++++ Chart26b_Chart-26-patch43-tbar/source/org/jfree/chart/axis/Axis.java	2023-08-16 11:09:03.950827635 +0900
+@@ -1189,12 +1189,15 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
++if (owner != null) {
+                 EntityCollection entities = owner.getEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 
+                             this.labelToolTip, this.labelURL));
+                 }
+         }
++
++        }
+         return state;
+ 
+     }

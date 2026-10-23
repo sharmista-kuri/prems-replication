@@ -1,0 +1,12 @@
+--- Math27b/src/main/java/org/apache/commons/math3/fraction/Fraction.java	2024-09-26 15:27:59.655507163 +0900
++++ Math27f_recoder/src/main/java/org/apache/commons/math3/fraction/Fraction.java
+@@ -594,8 +594,7 @@
+      * @return the fraction percentage as a <tt>double</tt>.
+      */
+     public double percentageValue() {
+-        return multiply(100).doubleValue();
+-    }
++return (100 * doubleValue());    }
+ 
+     /**
+      * <p>Creates a {@code Fraction} instance with the 2 parts

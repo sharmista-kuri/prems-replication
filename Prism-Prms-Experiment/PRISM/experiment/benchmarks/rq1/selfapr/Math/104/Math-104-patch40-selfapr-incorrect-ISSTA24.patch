@@ -1,0 +1,11 @@
+--- Math104b/src/java/org/apache/commons/math/special/Gamma.java	2024-09-26 16:02:38.417651417 +0900
++++ Math104f_selfapr/src/java/org/apache/commons/math/special/Gamma.java
+@@ -34,7 +34,7 @@
+     private static final long serialVersionUID = -6587513359895466954L;
+ 
+     /** Maximum allowed numerical error. */
+-    private static final double DEFAULT_EPSILON = 10e-9;
++private  static  final  double  DEFAULT_EPSILON  =  10d-10;
+ 
+     /** Lanczos coefficients */
+     private static double[] lanczos =

@@ -1,0 +1,16 @@
+diff --git gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java
+index 30c4f6e..cb8ad99 100644
+--- gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java
++++ gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java
+@@ -64,6 +64,11 @@ public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapte
+       throw new IllegalArgumentException(
+           "@JsonAdapter value must be TypeAdapter or TypeAdapterFactory reference.");
+     }
++// buggy code
++//       typeAdapter = typeAdapter.nullSafe();
++   if (typeAdapter == null) {
++      return null;
++    }
+     typeAdapter = typeAdapter.nullSafe();
+     return typeAdapter;
+   }

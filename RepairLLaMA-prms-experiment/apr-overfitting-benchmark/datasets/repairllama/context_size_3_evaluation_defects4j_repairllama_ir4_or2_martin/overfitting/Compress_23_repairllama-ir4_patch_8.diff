@@ -1,0 +1,16 @@
+diff --git src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java
+index 0bc5a1e..96565fb 100644
+--- src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java
++++ src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java
+@@ -109,7 +109,10 @@ class Coders {
+             byte propsByte = coder.properties[0];
+             long dictSize = coder.properties[1];
+             for (int i = 1; i < 4; i++) {
+-                dictSize |= (coder.properties[i + 1] << (8 * i));
++// buggy code
++//                 dictSize |= (coder.properties[i + 1] << (8 * i));
++               dictSize <<= 8;
++                dictSize |= coder.properties[i + 1] & 0xff;
+             }
+             if (dictSize > LZMAInputStream.DICT_SIZE_MAX) {
+                 throw new IOException("Dictionary larger than 4GiB maximum size");

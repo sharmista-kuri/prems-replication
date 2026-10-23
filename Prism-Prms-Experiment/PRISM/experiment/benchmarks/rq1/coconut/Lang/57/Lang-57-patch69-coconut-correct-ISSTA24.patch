@@ -1,0 +1,11 @@
+--- Lang57b/src/java/org/apache/commons/lang/LocaleUtils.java	2024-09-26 16:20:45.176059109 +0900
++++ Lang57f_coconut/src/java/org/apache/commons/lang/LocaleUtils.java
+@@ -220,7 +220,7 @@
+      * @return true if the locale is a known locale
+      */
+     public static boolean isAvailableLocale(Locale locale) {
+-        return cAvailableLocaleSet.contains(locale);
++return cAvailableLocaleList.contains( locale ) ;
+     }
+ 
+     //-----------------------------------------------------------------------

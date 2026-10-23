@@ -1,0 +1,18 @@
+diff --git src/main/java/org/apache/commons/lang3/ClassUtils.java src/main/java/org/apache/commons/lang3/ClassUtils.java
+index 615e4a9..d5a322e 100644
+--- src/main/java/org/apache/commons/lang3/ClassUtils.java
++++ src/main/java/org/apache/commons/lang3/ClassUtils.java
+@@ -907,8 +907,13 @@ public class ClassUtils {
+         }
+         Class<?>[] classes = new Class[array.length];
+         for (int i = 0; i < array.length; i++) {
++// buggy code
++//             classes[i] = array[i].getClass();
++           Object object = array[i];
++            if (object != null) {
+                 classes[i] = array[i].getClass();
+             }
++        }
+         return classes;
+     }
+ 

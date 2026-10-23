@@ -1,0 +1,11 @@
+--- Closure73b/src/com/google/javascript/jscomp/CodeGenerator.java	2023-08-16 10:49:31.934740199 +0900
++++ Closure73b_Closure-73-patch1-tbar/src/com/google/javascript/jscomp/CodeGenerator.java	2023-08-16 15:50:27.082948280 +0900
+@@ -1042,7 +1042,7 @@
+             // No charsetEncoder provided - pass straight latin characters
+             // through, and escape the rest.  Doing the explicit character
+             // check is measurably faster than using the CharsetEncoder.
+-            if (c > 0x1f && c <= 0x7f) {
++if ((c > 0x1f && c <= 0x7f) && (c > 0x1F && c < 0x7F)) {
+               sb.append(c);
+             } else {
+               // Other characters can be misinterpreted by some js parsers,

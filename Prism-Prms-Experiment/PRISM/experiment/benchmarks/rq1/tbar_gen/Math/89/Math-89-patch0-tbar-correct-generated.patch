@@ -1,0 +1,15 @@
+--- Math89b/src/java/org/apache/commons/math/stat/Frequency.java	2023-08-16 10:49:35.302822277 +0900
++++ Math89b_Math-89-patch0-tbar/src/java/org/apache/commons/math/stat/Frequency.java	2023-08-16 11:09:04.610846732 +0900
+@@ -107,7 +107,12 @@
+      */
+     @Deprecated
+     public void addValue(Object v) {
++if (v instanceof Comparable<?>) {
+             addValue((Comparable<?>) v);            
++	} else {
++	throw new IllegalArgumentException("Illegal argument: v");
++}
++
+     }
+     
+     /**

@@ -1,0 +1,26 @@
+diff --git src/main/java/org/joda/time/Partial.java src/main/java/org/joda/time/Partial.java
+index 0d4edf4..cd7f116 100644
+--- src/main/java/org/joda/time/Partial.java
++++ src/main/java/org/joda/time/Partial.java
+@@ -431,8 +431,6 @@ public final class Partial
+         if (index == -1) {
+             DateTimeFieldType[] newTypes = new DateTimeFieldType[iTypes.length + 1];
+             int[] newValues = new int[newTypes.length];
+-            
+-            // find correct insertion point to keep largest-smallest order
+             int i = 0;
+             DurationField unitField = fieldType.getDurationType().getField(iChronology);
+             if (unitField.isSupported()) {
+@@ -459,9 +457,9 @@ public final class Partial
+             newValues[i] = value;
+             System.arraycopy(iTypes, i, newTypes, i + 1, newTypes.length - i - 1);
+             System.arraycopy(iValues, i, newValues, i + 1, newValues.length - i - 1);
+-            // use public constructor to ensure full validation
+-            // this isn't overly efficient, but is safe
+-            Partial newPartial = new Partial(iChronology, newTypes, newValues);
++// buggy code
++//             Partial newPartial = new Partial(iChronology, newTypes, newValues);
++           Partial newPartial = new Partial(newTypes, newValues);
+             iChronology.validate(newPartial, newValues);
+             return newPartial;
+         }

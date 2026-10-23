@@ -1,0 +1,10 @@
+--- Closure128b/src/com/google/javascript/jscomp/CodeGenerator.java	2024-02-28 11:18:49.092001796 +0900
++++ Closure128b_Closure-128-patch0-ar/src/com/google/javascript/jscomp/CodeGenerator.java	2024-02-28 11:18:49.168003177 +0900
+@@ -782,6 +782,7 @@
+ 
+   static boolean isSimpleNumber(String s) {
+     int len = s.length();
++ if ( len == 0 ) { return false ; } if ( len == 1 ) { return true ; }
+     for (int index = 0; index < len; index++) {
+       char c = s.charAt(index);
+       if (c < '0' || c > '9') {

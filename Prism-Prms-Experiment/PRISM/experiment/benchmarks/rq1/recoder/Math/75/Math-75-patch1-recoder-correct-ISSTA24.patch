@@ -1,0 +1,12 @@
+--- Math75b/src/main/java/org/apache/commons/math/stat/Frequency.java	2024-09-26 15:28:50.285170667 +0900
++++ Math75f_recoder/src/main/java/org/apache/commons/math/stat/Frequency.java
+@@ -300,8 +300,7 @@
+      */
+     @Deprecated
+     public double getPct(Object v) {
+-        return getCumPct((Comparable<?>) v);
+-    }
++return getPct((Comparable<?>)v);    }
+ 
+     /**
+      * Returns the percentage of values that are equal to v

@@ -1,0 +1,11 @@
+--- Lang39b/src/java/org/apache/commons/lang3/StringUtils.java	2024-02-28 11:19:03.748268530 +0900
++++ Lang39b_Lang-39-patch59-ar/src/java/org/apache/commons/lang3/StringUtils.java	2024-02-28 11:19:04.552283174 +0900
+@@ -3673,7 +3673,7 @@
+ 
+         // count the replacement text elements that are larger than their corresponding text being replaced
+         for (int i = 0; i < searchList.length; i++) {
+-            int greater = replacementList[i].length() - searchList[i].length();
++ int greater = i + 1 + text.length();
+             if (greater > 0) {
+                 increase += 3 * greater; // assume 3 matches
+             }

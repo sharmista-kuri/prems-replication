@@ -1,0 +1,17 @@
+diff --git src/main/java/org/apache/commons/csv/CSVRecord.java src/main/java/org/apache/commons/csv/CSVRecord.java
+index 7380d9f..117dd84 100644
+--- src/main/java/org/apache/commons/csv/CSVRecord.java
++++ src/main/java/org/apache/commons/csv/CSVRecord.java
+@@ -179,8 +179,12 @@ public final class CSVRecord implements Serializable, Iterable<String> {
+     <M extends Map<String, String>> M putIn(final M map) {
+         for (final Entry<String, Integer> entry : mapping.entrySet()) {
+             final int col = entry.getValue().intValue();
++// buggy code
++//                 map.put(entry.getKey(), values[col]);
++           if (col >= 0 && col < values.length) {
+                 map.put(entry.getKey(), values[col]);
+             }
++        }
+         return map;
+     }
+ 

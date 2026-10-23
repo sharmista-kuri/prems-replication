@@ -1,0 +1,27 @@
+diff --git src/main/java/org/joda/time/format/DateTimeFormatter.java src/main/java/org/joda/time/format/DateTimeFormatter.java
+index 447674a..ed1b5aa 100644
+--- src/main/java/org/joda/time/format/DateTimeFormatter.java
++++ src/main/java/org/joda/time/format/DateTimeFormatter.java
+@@ -702,13 +702,18 @@ public class DateTimeFormatter {
+         if (instant == null) {
+             throw new IllegalArgumentException("Instant must not be null");
+         }
+-        
+         long instantMillis = instant.getMillis();
+         Chronology chrono = instant.getChronology();
+-        long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
++// buggy code
++//         long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
++//         chrono = selectChronology(chrono);
++//         int defaultYear = chrono.year().get(instantLocal);
++       long instantLocal = instantMillis;
++        if (chrono.getZone() != null) {
++            instantLocal += chrono.getZone().getOffset(instantMillis);
++        }
+         chrono = selectChronology(chrono);
+-        int defaultYear = chrono.year().get(instantLocal);
+-        
++        int defaultYear = chrono.year().get(instantMillis);
+         DateTimeParserBucket bucket = new DateTimeParserBucket(
+             instantLocal, chrono, iLocale, iPivotYear, defaultYear);
+         int newPos = parser.parseInto(bucket, text, position);

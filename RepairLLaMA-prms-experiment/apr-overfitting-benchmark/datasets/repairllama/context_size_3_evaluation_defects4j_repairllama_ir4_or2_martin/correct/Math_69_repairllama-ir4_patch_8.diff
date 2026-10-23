@@ -1,0 +1,15 @@
+diff --git src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+index 83b4c41..3034824 100644
+--- src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
++++ src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java
+@@ -168,7 +168,9 @@ public class PearsonsCorrelation {
+                 } else {
+                     double r = correlationMatrix.getEntry(i, j);
+                     double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));
+-                    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
++// buggy code
++//                     out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
++                   out[i][j] = 2 * tDistribution.cumulativeProbability(-t);
+                 }
+             }
+         }

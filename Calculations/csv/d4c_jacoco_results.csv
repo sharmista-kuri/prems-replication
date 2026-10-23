@@ -1,0 +1,123 @@
+slug,project,label,fqcn,abs_lines,line_coverage,branch_coverage,patched_line_coverage,status
+Chart_1,Chart,1,org.jfree.chart.renderer.xy.AbstractXYItemRenderer,985;986;987;988;989;990;991;992;993;994;995;996;997;998;999;1000;1004;1005;1006;1007;1008;1009;1010;1014;1015;1016,,,,PATCH_APPLY_FAILED
+Chart_5,Chart,0,org.jfree.data.xy.XYSeries,541;542;543;545;546;547;548;549;550;551;555;556;558;559;560;561;562;563;564;565;574,0.7714,0.7683,0.5714,OK
+Chart_6,Chart,1,org.jfree.data.xy.YWithXInterval,115;116;117;118;119;120;121;122;123;124;127;128;130,,,,PATCH_APPLY_FAILED
+Chart_9,Chart,1,org.jfree.data.time.TimeSeries,941;942;943;946;947;948;949;958,0.7647,0.7422,0.6250,OK
+Chart_11,Chart,1,org.jfree.chart.util.ShapeUtilities,275;296,0.4256,0.5603,0.5000,OK
+Chart_13,Chart,0,org.jfree.chart.block.GridArrangement,182;198;199;212;213;214;215;216;217;218;249,,,,PATCH_APPLY_FAILED
+Chart_24,Chart,1,org.jfree.chart.renderer.LookupPaintScale,265;266;267;268;270;271,,,,PATCH_APPLY_FAILED
+Closure_2,Closure,1,com.google.javascript.jscomp.TypeCheck,1569;1570;1571;1574;1575;1576;1577;1578;1579;1580;1581;1582;1583;1584;1585;1586;1588;1591;1592;1594,0.0000,0.0000,0.0000,OK
+Closure_5,Closure,1,com.google.javascript.jscomp.InlineObjectLiterals,176;177;178;255,0.9834,0.9273,0.5000,OK
+Closure_36,Closure,1,com.google.javascript.jscomp.InlineVariables,575;576;577;580;584,0.9826,0.9188,0.4000,OK
+Closure_38,Closure,1,com.google.javascript.jscomp.CodeConsumer,243;244;245;246;247;250;251;252;253;254;255;256;257;259;260;261;262;263;265;267,0.0000,0.0000,0.0000,OK
+Closure_44,Closure,1,com.google.javascript.jscomp.CodeConsumer,194;201;202;203;205;206,0.0000,0.0000,0.0000,OK
+Closure_52,Closure,1,com.google.javascript.jscomp.CodeGenerator,738;739;740;750,0.0000,0.0000,0.0000,OK
+Closure_56,Closure,1,com.google.javascript.jscomp.SourceFile,232;234;235;236;237;238;239;240;241;242;243,0.0000,0.0000,0.0000,OK
+Closure_57,Closure,1,com.google.javascript.jscomp.ClosureCodingConvention,197;204,0.0000,0.0000,0.0000,OK
+Closure_58,Closure,0,com.google.javascript.jscomp.LiveVariablesAnalysis,206;262,0.9800,0.9423,0.5000,OK
+Closure_61,Closure,1,com.google.javascript.jscomp.NodeUtil,947;948;949;950;969,0.0000,0.0000,0.0000,OK
+Closure_62,Closure,1,com.google.javascript.jscomp.LightweightMessageFormatter,98;111,0.0000,0.0000,0.0000,OK
+Closure_64,Closure,1,com.google.javascript.jscomp.Compiler,1432;1433;1434;1435;1436;1437;1438;1456,0.0000,0.0000,0.0000,OK
+Closure_65,Closure,1,com.google.javascript.jscomp.CodeGenerator,1012;1013;1014;1015;1016;1017;1018;1022;1063,0.0000,0.0000,0.0000,OK
+Closure_66,Closure,1,com.google.javascript.jscomp.TypeCheck,516;517;524;815,0.0000,0.0000,0.0000,OK
+Closure_73,Closure,1,com.google.javascript.jscomp.CodeGenerator,1039;1040;1041;1049,0.0000,0.0000,0.0000,OK
+Closure_77,Closure,1,com.google.javascript.jscomp.CodeGenerator,963;964;965;966;967;968;972;984;986;992;1011,0.0000,0.0000,0.0000,OK
+Closure_78,Closure,1,com.google.javascript.jscomp.PeepholeFoldConstants,705;706;707;708;709;710;711;712;713;714;715;716;737,0.9186,0.8328,0.6154,OK
+Closure_92,Closure,1,com.google.javascript.jscomp.ProcessClosurePrimitives,789;802;810,0.9853,0.8837,1.0000,OK
+Closure_94,Closure,0,com.google.javascript.jscomp.NodeUtil,322;323;324;325;326;328;329;330;331;332;334;335;337;338;339;341;342;343;344;345;348,0.9315,0.8656,0.2857,OK
+Closure_97,Closure,1,com.google.javascript.jscomp.PeepholeFoldConstants,698;699;714,0.8813,0.7849,0.6667,OK
+Closure_104,Closure,1,com.google.javascript.rhino.jstype.UnionType,292;299,0.9375,0.8810,0.5000,OK
+Closure_114,Closure,1,com.google.javascript.jscomp.NameAnalyzer,578;585;586;588,0.8745,0.8145,0.7500,OK
+Closure_119,Closure,0,com.google.javascript.jscomp.GlobalNamespace,368;431,0.8803,0.8035,0.5000,OK
+Closure_124,Closure,1,com.google.javascript.jscomp.ExploitAssigns,209;210;211;213;214;215;216;217;221,1.0000,0.9559,0.6667,OK
+Closure_125,Closure,1,com.google.javascript.jscomp.TypeCheck,1658;1659;1660;1661;1662;1663;1664;1665;1666;1667;1668;1669;1670;1671;1672;1673;1674;1675;1678;1679;1681,0.0000,0.0000,0.0000,OK
+Closure_126,Closure,1,com.google.javascript.jscomp.MinimizeExitPoints,109;110;111;112;113;116;117;118;119;120;121;123;124;127;128;129;130;131;132;133;134;135;137;140;141;142;143;146;147;148;151;154;155;156;159;160;161;162;165;166;167;168;173;174;176;180;181;183;184;185;186;187,0.9495,0.9104,0.8269,OK
+Closure_128,Closure,1,com.google.javascript.jscomp.CodeGenerator,785;786;787;789;790;791;792;793;794;795;796;797,0.0000,0.0000,0.0000,OK
+Closure_129,Closure,1,com.google.javascript.jscomp.PrepareAst,159;163;166;167;168;170;171;172;176;177;179;180,0.0000,0.0000,0.0000,OK
+Closure_152,Closure,1,com.google.javascript.rhino.jstype.PrototypeObjectType,125;134;135;136;137;139;140;142;143;144;148;152;153;154;158,,,,PATCH_APPLY_FAILED
+Closure_161,Closure,0,com.google.javascript.jscomp.PeepholeFoldConstants,1284;1285;1286;1288;1291;1297;1298;1302;1303;1308;1312;1313;1317;1319;1326,0.9105,0.8393,0.8000,OK
+Closure_166,Closure,1,com.google.javascript.rhino.jstype.PrototypeObjectType,128;130;131;132;136;148;149;150;151;152;153;154;155;156;157,0.0000,0.0000,0.0000,OK
+Closure_19,Closure,1,com.google.javascript.jscomp.type.ChainableReverseAbstractInterpreter,163;169;170;171;172;173;174;175;176;177;178;180,0.0000,0.0000,0.0000,OK
+Lang_3,Lang,1,org.apache.commons.lang3.math.NumberUtils,465;467;470;480;482;483;485;486;494;497;522;523;534;543;547;559;562;566;570;571;572;577;578;579;580;581;582;583;584;585;586;587;588;591,0.9813,0.8728,0.8235,OK
+Lang_6,Lang,1,org.apache.commons.lang3.text.translate.CharSequenceTranslator,76;77;78;79;80;81;82;83;84;85;86;87;88;89;90;92;93;94;95;97;98,0.9355,1.0000,0.8571,OK
+Lang_9,Lang,1,org.apache.commons.lang3.time.FastDateParser,143;144;145;146;147;148;149;153,0.9182,0.8560,0.7500,OK
+Lang_12,Lang,1,org.apache.commons.lang3.RandomStringUtils,204;211;245,0.9423,0.9600,0.3333,OK
+Lang_13,Lang,1,org.apache.commons.lang3.SerializationUtils,265;266;267;268;269;270;271;272;273;274,0.8500,0.9286,0.4000,OK
+Lang_14,Lang,1,org.apache.commons.lang3.StringUtils,782;783;784;785;786;787;788;789;790;791;792;793;795;796;797,0.9745,0.9747,0.6667,OK
+Lang_16,Lang,1,org.apache.commons.lang3.math.NumberUtils,445;446;447;448;449;450;451;452;453;454;455;456;457;458;459;460;461;462;464;466;467;468;469;470;471;472;474;475;476;477;478;479;480;481;482;483;484;485;486;487;488;489;490;491;492;493;494;495;496;497;498;499;500;501;502;503;504;506;507;508;510;514;516;517;519;523;525;526;527;528;529;530;531;532;533;534;535;536;537;538;539;540;541;542;543;544;545;546;547;548;549;550;551;552;553;554;555;556;557;558;559;560;561;562;563;564;567;568,0.9760,0.8785,0.5833,OK
+Lang_17,Lang,1,org.apache.commons.lang3.text.translate.CharSequenceTranslator,76;77;78;79;80;81;82;83;84;85;86;87;88;89;90;91;92;93;95;96,0.9333,1.0000,0.8500,OK
+Lang_18,Lang,1,,,,,,CHECKOUT_FAILED
+Lang_21,Lang,1,org.apache.commons.lang3.time.DateUtils,259;260;261;262;263;264;265;266;267;268;269;270,0.9591,0.8991,0.8333,OK
+Lang_22,Lang,1,org.apache.commons.lang3.math.Fraction,582;583;584;588;589;590;596;597;598;599;600;601;604;605;606;607;608;609;611;612;613;617;619;620;622;623;627;628;629;630;634;638;640;641,0.9859,0.9375,0.6471,OK
+Lang_24,Lang,1,org.apache.commons.lang3.math.NumberUtils,1320;1321;1322;1323;1324;1325;1326;1327;1328;1330;1331;1332;1333;1334;1335;1336;1337;1338;1340;1341;1342;1343;1344;1345;1346;1347;1348;1349;1350;1351;1352;1353;1354;1355;1356;1357;1358;1359;1360;1361;1362;1363;1364;1365;1366;1369;1370;1372;1373;1374;1376;1377;1380;1382;1383;1384;1385;1386;1389;1391;1392;1393;1394,0.9785,0.8807,0.7460,OK
+Lang_31,Lang,1,org.apache.commons.lang3.StringUtils,1441;1442;1443;1444;1445;1446;1447;1448;1449;1450;1451;1452;1453;1454;1455;1456;1457;1458;1459;1460;1461;1462,0.9746,0.9763,0.6818,OK
+Lang_33,Lang,1,org.apache.commons.lang3.ClassUtils,903;904;905;906;907;908;909;910;911;912;913;914;915;916;917,0.9514,0.9369,0.6667,OK
+Lang_39,Lang,1,org.apache.commons.lang3.StringUtils,3609;3633;3637;3658;3660;3661;3662;3663;3664;3665;3666;3687;3702;3704;3713,0.9733,0.9792,0.7333,OK
+Lang_42,Lang,1,org.apache.commons.lang.Entities,826;827;828;829;830;831;832;833;834;835;836;837;838;839;840;842;844;846;848;849;850;851;853;854,0.9766,0.9714,0.7917,OK
+Lang_43,Lang,1,org.apache.commons.lang.text.ExtendedMessageFormat,419;420;421;422;423;424;425;426;427;428;429;430;447,0.8225,0.6162,0.7692,OK
+Lang_45,Lang,1,org.apache.commons.lang.WordUtils,616;617;618;622;646,1.0000,1.0000,0.6000,OK
+Lang_51,Lang,1,org.apache.commons.lang.BooleanUtils,650;651;652;653;654;655;656;657;658;660;661;662;663;664;666;667;668;669;670;671;673;674;675,1.0000,0.9709,0.7391,OK
+Lang_52,Lang,1,org.apache.commons.lang.StringEscapeUtils,172;173;174;175;176;177;178;179;180;181;184;185;186;187;188;189;190;191;192;193;194;195;196;197;198;199;200;201;202;203;204;205;206;207;208;209;210;211;212;213;214;215;216;217;218;219;220;221;222;223;224;225;226;227;228;229;230;231;232;233;234;235;236;237;238;239;240;241;242;245;246,0.8202,0.8588,0.6761,OK
+Lang_54,Lang,1,org.apache.commons.lang.LocaleUtils,111;113;114;115;117;118;121;122;123;124;125;126;127;128;131,0.9630,0.8676,0.5333,OK
+Lang_55,Lang,1,org.apache.commons.lang.time.StopWatch,115;116;117;118;119;120;121;122,0.9828,0.9643,0.7500,OK
+Lang_58,Lang,1,org.apache.commons.lang.math.NumberUtils,398;399;400;401;402;403;404;405;406;407;408;409;410;411;412;413;414;415;417;418;419;420;421;422;423;424;426;427;428;429;430;431;432;433;434;436;437;439;440;441;442;443;444;445;446;447;448;449;450;451;452;453;454;455;457;458;459;461;467;468;470;476;477;478;479;480;481;482;483;484;485;486;487;488;489;490;491;492;494;495;496;497;498;499;500;501;502;503;504;505;506;507;508;509;510;511;512;513;514;515;517;518,0.9747,0.8915,0.5686,OK
+Lang_59,Lang,1,org.apache.commons.lang.text.StrBuilder,881;882;883;884;885;886;887;895,0.9939,0.9892,0.7500,OK
+Lang_61,Lang,1,org.apache.commons.lang.text.StrBuilder,1773;1774;1775;1776;1777;1778;1779;1787,0.9939,0.9892,0.6250,OK
+Math_5,Math,1,org.apache.commons.math3.complex.Complex,300;301;302;304;305;306;308;309;310;312;313;314;315;316;317;318;319;320;321,0.9556,0.9176,0.6842,OK
+Math_10,Math,1,org.apache.commons.math3.analysis.differentiation.DSCompiler,1386;1387;1388;1389;1390;1424;1426,1.0000,0.9931,0.8571,OK
+Math_11,Math,1,org.apache.commons.math3.distribution.MultivariateNormalDistribution,178;179;180;181;183;184;185;186,0.8305,0.7857,0.6250,OK
+Math_25,Math,1,org.apache.commons.math3.optimization.fitting.HarmonicFitter,300;318;319;320;322;323;324;325;326;328,0.9896,0.8824,0.8000,OK
+Math_30,Math,1,org.apache.commons.math3.stat.inference.MannWhitneyUTest,168;170;171;173;176;183;186;187;188;190;191,0.8919,0.9167,0.4545,OK
+Math_32,Math,1,org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet,124;125;127;128;129;134;135;136;137;139;140;141;144;145;146;148;149;150;151;152;153;154;155;156;157;158;159;163;165;166;167;168;169;170;172;173,0.7365,0.6098,0.4722,OK
+Math_41,Math,1,org.apache.commons.math.stat.descriptive.moment.Variance,331;332;333;334;344,0.9099,0.6957,0.0000,OK
+Math_57,Math,1,org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer,171;172;173;174;175;176;178;181;182;183;187;189;190;191;192;193;195;196;199;200;201;202;203;204;205;206;212,0.9685,0.9167,0.8519,OK
+Math_60,Math,1,org.apache.commons.math.distribution.NormalDistributionImpl,125;126;127;128;129;130;131;132;133;134;135;136;137;138;139;140;141,0.8333,0.8182,0.2353,OK
+Math_65,Math,1,org.apache.commons.math.optimization.general.AbstractLeastSquaresOptimizer,255;256;257;258;259;260;261,0.9375,0.9333,0.7143,OK
+Math_73,Math,1,org.apache.commons.math.analysis.solvers.NewtonSolver,87;88;89;126;127;128;129;130;133;134,,,,PATCH_APPLY_FAILED
+Math_80,Math,1,org.apache.commons.math.linear.EigenDecompositionImpl,1133;1135;1136;1137;1138;1139;1140;1142;1144;1145;1146;1147,0.9028,0.8285,0.8333,OK
+Math_82,Math,1,org.apache.commons.math.optimization.linear.SimplexSolver,82;84;86;90;91,0.9667,0.9211,0.8000,OK
+Math_85,Math,1,org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils,157;167,0.9143,0.6923,0.0000,OK
+Math_87,Math,1,org.apache.commons.math.optimization.linear.SimplexTableau,273;274;275;276;277;278;279;280;281;282,0.8947,0.8696,0.7000,OK
+Math_97,Math,1,org.apache.commons.math.analysis.SecantSolver,97;99;100;101;103;104;105;108;109;110;111;119,,,,PATCH_APPLY_FAILED
+Math_101,Math,1,org.apache.commons.math.complex.ComplexFormat,321;324;327;328;332;333;334;337;338;339;340;358;361;364;365;369;370;371;374;375;376;377;380;381;382;383;384;386;387,0.8723,0.8462,0.6897,OK
+Math_102,Math,1,org.apache.commons.math.stat.inference.ChiSquareTestImpl,66;67;68;69;70;71;72;73;75;76;77;78;80;81;82;83;85;87;88;89;90;91;92;93;94;95,0.9748,0.9111,0.6923,OK
+Math_58,Math,0,org.apache.commons.math.optimization.fitting.HarmonicFitter,76;77;78;79;80;81;82;83;84;85;86;87;88;89;90,,,,PATCH_APPLY_FAILED
+Lang_11,Lang,0,org.apache.commons.lang3.RandomStringUtils,205;206;207;208;209;210;212;215;216;217;218;219;220;261,0.9194,0.9333,0.0714,OK
+Lang_44,Lang,0,org.apache.commons.lang.NumberUtils,142;143;144;145;160;170;171;172;185;186;187;188;189;190;216;226;231;266;274;277;278;279;280;281;286,0.9254,0.8018,0.4400,OK
+Mockito_5,Mockito,1,org.mockito.internal.verification.VerificationOverTimeImpl,88;96,,,,COMPILE_FAILED
+Mockito_8,Mockito,0,org.mockito.internal.util.reflection.GenericMetadataSupport,67;68;69;70;71;72;73;77;78;79;80;81;82;83;84;85;86;87;90;91,,,,COMPILE_FAILED
+Mockito_13,Mockito,1,org.mockito.internal.MockHandler,74;77;78;79;80;81;84;85;86;108,0.0000,0.0000,0.0000,OK
+Mockito_24,Mockito,1,org.mockito.internal.stubbing.defaultanswers.ReturnsEmptyValues,76;77;78;83,0.0000,0.0000,0.0000,OK
+Mockito_29,Mockito,1,org.mockito.internal.matchers.apachecommons.ReflectionEquals,27;28;29;30;31;32;33;34;35;36,,,,PATCH_APPLY_FAILED
+Mockito_33,Mockito,1,org.mockito.internal.invocation.InvocationMatcher,93;94;95;96;98;99;100;101;102;103;104;105;106;107;108;109;110;111;112;113,0.0000,0.0000,0.0000,OK
+Mockito_34,Mockito,1,org.mockito.internal.invocation.InvocationMatcher,104;105;106;107;108;109;110;111;113;114;115,0.0000,0.0000,0.0000,OK
+Time_7,Time,1,org.joda.time.format.DateTimeFormatter,706;707;708;709;711;713;714;715;733,0.0000,0.0000,0.0000,OK
+Time_9,Time,0,org.joda.time.DateTimeZone,258;259;260;268;269;271;276,0.0000,0.0000,0.0000,OK
+Time_15,Time,1,org.joda.time.field.FieldUtils,136;138;139;140;141;142;143;144;145;146;147;148;149;150;151;152;153;154;155;156,0.0000,0.0000,0.0000,OK
+Time_16,Time,0,org.joda.time.format.DateTimeFormatter,705;707;709;710;711;712;713;725,0.0000,0.0000,0.0000,OK
+Time_18,Time,0,org.joda.time.chrono.ZonedChronology,118;119;121;122;123;124;126;127;129;131;140,,,,PATCH_APPLY_FAILED
+Time_19,Time,1,org.joda.time.DateTimeZone,900;911,0.0000,0.0000,0.0000,OK
+Time_27,Time,1,org.joda.time.format.PeriodFormatterBuilder,795;796;797;798;799;800;801;802;803;804;806;807;808;809;810;811;812;813;814;815,0.8689,0.7822,0.7500,OK
+Chart_1,Chart,1,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,"[1791, 1792, 1793, 1794, 1795, 1796, 1797, 1798, 1799, 1800, 1801, 1802, 1803, 1804, 1805, 1806, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1820, 1821, 1822]",0.5105,0.4504,0.5385,OK
+Chart_6,Chart,1,org.jfree.chart.util.ShapeList,"[105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 117, 118, 120]",0.9412,0.9375,0.6154,OK
+Chart_13,Chart,0,org.jfree.chart.block.BorderArrangement,"[423, 439, 440, 453, 454, 455, 456, 457, 458, 459]",0.7031,0.6500,0.6000,OK
+Chart_24,Chart,1,org.jfree.chart.renderer.GrayPaintScale,"[124, 125, 126, 127, 129, 130]",0.9615,0.9000,0.8333,OK
+Time_18,Time,0,org.joda.time.chrono.GJChronology,"[362, 363, 365, 366, 367, 368, 370, 371, 373, 375]",0.8266,0.7013,0.7000,OK
+Math_58,Math,0,org.apache.commons.math.optimization.fitting.GaussianFitter,"[121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134]",0.6667,0.6333,0.2857,OK
+Mockito_5,Mockito,1,org.mockito.internal.verification.VerificationOverTimeImpl,"[88, 96]",0.9412,0.8333,0.5000,OK
+Math_97,Math,1,org.apache.commons.math.analysis.BrentSolver,"[138, 140, 141, 142, 144, 145, 146, 149, 150, 151, 152, 160]",0.9247,0.8600,0.4167,OK
+Chart_1,Chart,1,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,"[1791, 1792, 1793, 1794, 1795, 1796, 1797, 1798, 1799, 1800, 1801, 1802, 1803, 1804, 1805, 1806, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1820, 1821, 1822]",0.5105,0.4504,0.5385,OK
+Chart_6,Chart,1,org.jfree.chart.util.ShapeList,"[105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 117, 118, 120]",0.9412,0.9375,0.6154,OK
+Chart_13,Chart,0,org.jfree.chart.block.BorderArrangement,"[423, 439, 440, 453, 454, 455, 456, 457, 458, 459]",0.7031,0.6500,0.6000,OK
+Chart_24,Chart,1,org.jfree.chart.renderer.GrayPaintScale,"[124, 125, 126, 127, 129, 130]",0.9615,0.9000,0.8333,OK
+Time_18,Time,0,org.joda.time.chrono.GJChronology,"[362, 363, 365, 366, 367, 368, 370, 371, 373, 375]",0.8266,0.7013,0.7000,OK
+Math_58,Math,0,org.apache.commons.math.optimization.fitting.GaussianFitter,"[121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134]",0.6667,0.6333,0.2857,OK
+Mockito_5,Mockito,1,org.mockito.internal.verification.VerificationOverTimeImpl,"[88, 96]",,,,COMPILE_FAILED
+Chart_1,Chart,1,org.jfree.chart.renderer.category.AbstractCategoryItemRenderer,"[1791, 1792, 1793, 1794, 1795, 1796, 1797, 1798, 1799, 1800, 1801, 1802, 1803, 1804, 1805, 1806, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1820, 1821, 1822]",0.5105,0.4504,0.5385,OK
+Chart_6,Chart,1,org.jfree.chart.util.ShapeList,"[105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 117, 118, 120]",0.9412,0.9375,0.6154,OK
+Chart_13,Chart,0,org.jfree.chart.block.BorderArrangement,"[423, 439, 440, 453, 454, 455, 456, 457, 458, 459]",0.7031,0.6500,0.6000,OK
+Chart_24,Chart,1,org.jfree.chart.renderer.GrayPaintScale,"[124, 125, 126, 127, 129, 130]",0.9615,0.9000,0.8333,OK
+Time_18,Time,0,org.joda.time.chrono.GJChronology,"[362, 363, 365, 366, 367, 368, 370, 371, 373, 375]",0.8266,0.7013,0.7000,OK
+Math_58,Math,0,org.apache.commons.math.optimization.fitting.GaussianFitter,"[121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134]",0.6667,0.6333,0.2857,OK
+Mockito_5,Mockito,1,org.mockito.internal.verification.VerificationOverTimeImpl,"[88, 96]",,,,COMPILE_FAILED
+Math_97,Math,1,org.apache.commons.math.analysis.BrentSolver,"[138, 140, 141, 142, 144, 145, 146, 149, 150, 151, 152, 160]",0.9247,0.8600,0.4167,OK

@@ -1,0 +1,27 @@
+diff --git src/com/google/javascript/jscomp/ExploitAssigns.java src/com/google/javascript/jscomp/ExploitAssigns.java
+index 0f03e35..b180eec 100644
+--- src/com/google/javascript/jscomp/ExploitAssigns.java
++++ src/com/google/javascript/jscomp/ExploitAssigns.java
+@@ -204,18 +204,19 @@ class ExploitAssigns extends AbstractPeepholeOptimization {
+    * @return Whether the replacement can be made.
+    */
+   private boolean isSafeReplacement(Node node, Node replacement) {
+-    // No checks are needed for simple names.
+     if (node.isName()) {
+       return true;
+     }
+     Preconditions.checkArgument(node.isGetProp());
+-
++// buggy code
++//       node = node.getFirstChild();
++   while (node.getFirstChild() != null) {
+       node = node.getFirstChild();
++    }
+     if (node.isName()
+         && isNameAssignedTo(node.getString(), replacement)) {
+       return false;
+     }
+-
+     return true;
+   }
+ 

@@ -1,0 +1,11 @@
+--- Lang33b/src/main/java/org/apache/commons/lang3/ClassUtils.java	2024-02-28 11:19:45.873037494 +0900
++++ Lang33b_Lang-33-patch0-ar/src/main/java/org/apache/commons/lang3/ClassUtils.java	2024-02-28 11:19:45.905038079 +0900
+@@ -906,7 +906,7 @@
+             return ArrayUtils.EMPTY_CLASS_ARRAY;
+         }
+         Class<?>[] classes = new Class[array.length];
+-        for (int i = 0; i < array.length; i++) {
++for (int i = 0; i < array.length; i++)  { if (array[i]!= null)
+             classes[i] = array[i].getClass();
+         }
+         return classes;

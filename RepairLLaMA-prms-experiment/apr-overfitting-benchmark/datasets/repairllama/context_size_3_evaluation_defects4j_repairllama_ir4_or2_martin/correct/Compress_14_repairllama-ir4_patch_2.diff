@@ -1,0 +1,72 @@
+diff --git src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
+index 8239480..51eb1d2 100644
+--- src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
++++ src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java
+@@ -57,23 +57,21 @@ public class TarUtils {
+         long    result = 0;
+         int     end = offset + length;
+         int     start = offset;
+-
+         if (length < 2){
+             throw new IllegalArgumentException("Length "+length+" must be at least 2");
+         }
+-
+-        boolean allNUL = true;
+-        for (int i = start; i < end; i++){
+-            if (buffer[i] != 0){
+-                allNUL = false;
+-                break;
+-            }
+-        }
+-        if (allNUL) {
++// buggy code
++//         boolean allNUL = true;
++//         for (int i = start; i < end; i++){
++//             if (buffer[i] != 0){
++//                 allNUL = false;
++//                 break;
++//             }
++//         }
++//         if (allNUL) {
++       if (buffer[start] == 0){
+             return 0L;
+         }
+-
+-        // Skip leading spaces
+         while (start < end){
+             if (buffer[start] == ' '){
+                 start++;
+@@ -81,8 +79,6 @@ public class TarUtils {
+                 break;
+             }
+         }
+-
+-        // Must have trailing NUL or space
+         byte trailer;
+         trailer = buffer[end-1];
+         if (trailer == 0 || trailer == ' '){
+@@ -91,23 +87,18 @@ public class TarUtils {
+             throw new IllegalArgumentException(
+                     exceptionMessage(buffer, offset, length, end-1, trailer));
+         }
+-        // May have additional NUL or space
+         trailer = buffer[end-1];
+         if (trailer == 0 || trailer == ' '){
+             end--;
+         }
+-
+         for ( ;start < end; start++) {
+             final byte currentByte = buffer[start];
+-            // CheckStyle:MagicNumber OFF
+             if (currentByte < '0' || currentByte > '7'){
+                 throw new IllegalArgumentException(
+                         exceptionMessage(buffer, offset, length, start, currentByte));
+             }
+-            result = (result << 3) + (currentByte - '0'); // convert from ASCII
+-            // CheckStyle:MagicNumber ON
++            result = (result << 3) + (currentByte - '0'); 
+         }
+-
+         return result;
+     }
+ 
