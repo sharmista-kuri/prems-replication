@@ -1,29 +1,3 @@
-"""
-prms_roc_curves_v2.py — Overlaid ROC curves for five PRMS datasets,
-with mislabeled RepairLLaMA patches removed.
-
-Usage:
-    python prms_roc_curves_v2.py \
-        --wang    wang_prms_results.csv \
-        --prism   prism_prms_pilot.csv \
-        --llama   repairllama_combined.csv \
-        --srepair srepair_prms_results.csv \
-        --d4c     d4c_math_lang_results.csv
-
-Optional flags:
-    --output      prms_roc_curves.png   (also saves .pdf)
-    --dpi         300
-    --show-original               # also draw RepairLLaMA *before* correction as a faded line
-
-Label conventions handled automatically per dataset:
-    prms_roc_curves.py  style: label = "correct" / "overfitting"  (or "1"/"0" strings)
-    compute_auc style  :       label = "1" (correct) / "0" (overfitting)
-Both are normalised inside load().
-
-Requirements:
-    pip install pandas matplotlib numpy scikit-learn
-"""
-
 import argparse
 import csv
 import sys
@@ -36,8 +10,6 @@ from sklearn.metrics import roc_curve, roc_auc_score
 
 warnings.filterwarnings("ignore")
 
-# ── dataset display config ────────────────────────────────────────────────────
-# (arg_key, legend label, color, linestyle, linewidth)
 DATASETS = [
     ("wang",    "Wang et al. (Classical)",  "#ff7f0e",  "--",            1.8),
     ("prism",   "PRISM (Classical)",        "#1f77b4",  "-",             2.8),
@@ -46,9 +18,6 @@ DATASETS = [
     ("d4c",     "D4C (LLM)",                "#9467bd",  (0,(3,1,1,1)),   2.8),
 ]
 
-# ── 10 confirmed mislabeled RepairLLaMA patches ───────────────────────────────
-# These are overfitting-labeled patches that are semantically correct.
-# Source: manual inspection across Math_57, Chart_12, Lang_33.
 MISLABELED_LLAMA = {
     ("Math_57",  "Math_57_repairllama-ir4_patch_1.diff"),
     ("Math_57",  "Math_57_repairllama-ir4_patch_4.diff"),
@@ -63,23 +32,16 @@ MISLABELED_LLAMA = {
 }
 
 
-# ── loading ───────────────────────────────────────────────────────────────────
-
 def normalise_label(raw):
-    """Map any label variant → 'correct' or 'overfitting'."""
     v = str(raw).strip().lower()
     if v in ("1", "correct", "true"):
         return "correct"
     if v in ("0", "overfitting", "false"):
         return "overfitting"
-    return v  # leave unknown values as-is (will be dropped as NaN later)
+    return v
 
 
 def load(path, name):
-    """
-    Load a PRMS results CSV and return a DataFrame of assessable rows.
-    Assessable = (status==OK AND killed+survived>0) OR status==FAILS_TRIGGER.
-    """
     try:
         rows = []
         with open(path, newline="", encoding="utf-8") as f:
@@ -91,7 +53,6 @@ def load(path, name):
 
     df = pd.DataFrame(rows)
 
-    # numeric columns
     for col in ("prmsc", "killed", "survived"):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
@@ -100,10 +61,8 @@ def load(path, name):
     df["killed"]   = df["killed"].fillna(0)
     df["survived"] = df["survived"].fillna(0)
 
-    # normalise label
     df["label"] = df["label"].apply(normalise_label)
 
-    # split by status
     ok  = df[df["status"] == "OK"]
     ok_assessable = ok[(ok["killed"] + ok["survived"]) > 0].copy()
 
@@ -114,7 +73,6 @@ def load(path, name):
     assessable = assessable.dropna(subset=["prmsc", "label"]).reset_index(drop=True)
     assessable = assessable[assessable["label"].isin(["correct", "overfitting"])].reset_index(drop=True)
 
-    # binary label: 1 = overfitting (positive class)
     assessable["y"] = (assessable["label"] == "overfitting").astype(int)
 
     n_c = (assessable["label"] == "correct").sum()
@@ -124,10 +82,6 @@ def load(path, name):
 
 
 def remove_mislabeled(df, mislabeled_set):
-    """
-    Drop rows that are in the mislabeled set.
-    Requires columns: bug_id, patch_file. Falls back gracefully if missing.
-    """
     if "bug_id" not in df.columns or "patch_file" not in df.columns:
         print("  [warn] bug_id/patch_file columns not found — cannot filter mislabeled patches")
         return df
@@ -141,11 +95,9 @@ def remove_mislabeled(df, mislabeled_set):
     return df[~mask].reset_index(drop=True)
 
 
-# ── AUC helpers ───────────────────────────────────────────────────────────────
-
 def compute_roc(df):
     y = df["y"].values
-    s = -df["prmsc"].values          # negate: low PRMSc → strong overfitting signal
+    s = -df["prmsc"].values
     fpr, tpr, _ = roc_curve(y, s)
     auc = roc_auc_score(y, s)
     return fpr, tpr, auc
@@ -165,8 +117,6 @@ def bootstrap_ci(df, n=10000, seed=42):
     return tuple(np.percentile(aucs, [2.5, 97.5]))
 
 
-# ── plotting ──────────────────────────────────────────────────────────────────
-
 def plot(data_filtered, data_original, show_original, output, dpi):
     plt.rcParams.update({"font.family": "sans-serif"})
     fig, ax = plt.subplots(figsize=(6, 5))
@@ -179,8 +129,6 @@ def plot(data_filtered, data_original, show_original, output, dpi):
 
         suffix = ""
         if key == "llama":
-            # suffix = " (corrected)"
-            # optionally draw the original (faded, same style)
             if show_original:
                 df_orig = data_original[key]
                 fpr_o, tpr_o, auc_o = compute_roc(df_orig)
@@ -194,7 +142,6 @@ def plot(data_filtered, data_original, show_original, output, dpi):
                 label=f"{label}{suffix}  (AUC = {auc:.3f})")
         print(f"  {key:10s}  filtered   AUC = {auc:.3f}  95% CI [{lo:.3f}, {hi:.3f}]")
 
-    # random baseline
     ax.plot([0, 1], [0, 1], "k--", linewidth=0.8, alpha=0.5,
             label="Random (AUC = 0.500)")
 
@@ -215,8 +162,6 @@ def plot(data_filtered, data_original, show_original, output, dpi):
     plt.show()
 
 
-# ── main ──────────────────────────────────────────────────────────────────────
-
 def main():
     parser = argparse.ArgumentParser(
         description="Overlaid ROC curves for five PReMS datasets."
@@ -226,7 +171,7 @@ def main():
     parser.add_argument("--llama",         required=True)
     parser.add_argument("--srepair",       required=True)
     parser.add_argument("--d4c",           required=True)
-    parser.add_argument("--output",        default="prms_roc_curves.png")
+    parser.add_argument("--output",        default="PReMS_roc_curves.png")
     parser.add_argument("--dpi",           type=int, default=300)
     parser.add_argument("--show-original", action="store_true",
                         help="Also draw RepairLLaMA original curve (faded) for comparison")
@@ -249,25 +194,10 @@ def main():
         if key == "llama":
             data_filtered[key] = remove_mislabeled(df.copy(), MISLABELED_LLAMA)
         else:
-            data_filtered[key] = df   # unchanged for all other datasets
+            data_filtered[key] = df
 
     plot(data_filtered, data_original, args.show_original, args.output, args.dpi)
 
 
 if __name__ == "__main__":
     main()
-
-    # Example:
-    # python prms_roc_curves_v2.py \
-    #     --wang wang_prms_results.csv \
-    #     --prism prism_prms_pilot.csv \
-    #     --llama repairllama_final.csv \
-    #     --srepair srepair_prms_results_v5.csv \
-    #     --d4c d4c_final.csv \
-    #     --show-original
-
-
-    # python prms_roc_curves_v2.py --wang wang_prms_results.csv --prism prism_prms_pilot.csv --llama repairllama_final.csv --srepair srepair_prms_results.csv --d4c d4c_final.csv
-
-
-    # python prms_roc_curves_v2.py --wang csv\wang_prms_results.csv --prism csv\prism_prms_results.csv --llama csv\repairllama_prms_results.csv --srepair csv\srepair_prms_results.csv --d4c csv\d4c_prms_results.csv

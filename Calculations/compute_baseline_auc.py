@@ -1,16 +1,4 @@
 #!/usr/bin/env python3
-"""
-Compute AUC comparison: PReMS vs JaCoCo coverage baselines across all datasets.
-
-Usage:
-  python compute_baseline_auc.py
-
-All CSV files expected in csv/ subdirectory.
-
-Prints AUC per dataset for PReMS and each coverage baseline, then a summary
-table (also saved to csv/baseline_auc_summary.csv).
-"""
-
 import pandas as pd
 import numpy as np
 from sklearn.metrics import roc_auc_score
@@ -81,7 +69,6 @@ def run_repairllama():
     prems["survived"] = pd.to_numeric(prems["survived"], errors="coerce").fillna(0)
     prems["prmsc"]    = pd.to_numeric(prems["prmsc"],    errors="coerce")
     prems["label"]    = pd.to_numeric(prems["label"],    errors="coerce")
-    # Remove 10 confirmed mislabeled patches
     prems  = prems[~prems["patch_file"].isin(MISLABELED_LLAMA)]
     jacoco = jacoco[~jacoco["patch_file"].isin(MISLABELED_LLAMA)]
     assessable = prems[(prems["status"] == "OK") & (prems["killed"] + prems["survived"] > 0)]
@@ -101,17 +88,12 @@ def run_srepair():
     prems["label"]    = pd.to_numeric(prems["label"],    errors="coerce")
     jacoco["label"]   = pd.to_numeric(jacoco["label"],   errors="coerce")
     ok = prems[(prems["status"] == "OK") & (prems["killed"] + prems["survived"] > 0)]
-    # Include FAILS_TRIGGER patches (prmsc=0, confirmed overfitting)
     fails = prems[prems["status"] == "FAILS_TRIGGER"].copy()
     fails["prmsc"] = 0.0
     assessable = pd.concat([ok, fails]).sort_index()
-    # Merge on bug_id+label+scope_lines
-    # srepair_jacoco_full.csv already has one row per PReMS patch
-    # Sort both by bug_id+label+scope_lines then merge by position within each group
     merge_cols = ["bug_id", "label", "scope_lines"]
     assessable = assessable.sort_values(merge_cols).reset_index(drop=True)
     jacoco = jacoco.sort_values(merge_cols).reset_index(drop=True)
-    # Add within-group rank to handle duplicates
     assessable["_rank"] = assessable.groupby(merge_cols).cumcount()
     jacoco["_rank"]     = jacoco.groupby(merge_cols).cumcount()
     merged = assessable.merge(
@@ -129,7 +111,6 @@ def run_d4c():
     prems["prmsc"]    = pd.to_numeric(prems["prmsc"],    errors="coerce")
     prems["label"]    = pd.to_numeric(prems["label"],    errors="coerce")
     assessable = prems[(prems["status"] == "OK") & (prems["killed"] + prems["survived"] > 0)]
-    # Deduplicate JaCoCo — keep OK rows preferentially
     jacoco = (jacoco.sort_values("status", key=lambda s: (s != "OK").astype(int))
                     .drop_duplicates(subset=["slug"], keep="first"))
     merged = assessable.merge(
@@ -166,7 +147,6 @@ def print_dataset(name, merged, prmsc_col, label_col, jac_status_col):
         else:
             print(f"  {cname:<26} {'N/A':>6}  {n_j:>5}")
         row[cname] = auc_j
-    # If JaCoCo failed on some patches, also give PReMS on the same subset
     row["n_coverage"] = n_cov
     row["PReMS_same_subset"] = None
     if n_cov < n_p:

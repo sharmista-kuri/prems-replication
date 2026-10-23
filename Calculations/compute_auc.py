@@ -1,11 +1,3 @@
-"""
-Usage:
-    python compute_auc.py file1.csv file2.csv file3.csv ...
-
-Requirements:
-    pip install pandas numpy scikit-learn scipy
-"""
-
 import csv
 import sys
 import warnings
@@ -39,13 +31,11 @@ def normalise_label(raw):
 
 
 def load_full(path):
-    """Load the entire CSV with numeric coercion; no filtering."""
     rows = []
     with open(path, newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
             rows.append({k.strip(): v.strip() for k, v in row.items()})
     df = pd.DataFrame(rows)
-    # flag rows where prmsc is the sentinel string before coercion (e.g. D4C CSV)
     if "prmsc" in df.columns:
         df["prmsc_no_mutants"] = df["prmsc"].str.strip().str.upper() == "NO_MUTANTS"
     else:
@@ -60,8 +50,6 @@ def load_full(path):
 
 
 def make_assessable(df):
-    """Filter to the assessable subset used for AUC computation."""
-    # exclude OK rows where prmsc was NO_MUTANTS sentinel
     ok    = df[(df["status"] == "OK") & ((df["killed"] + df["survived"]) > 0)
                & ~df["prmsc_no_mutants"]].copy()
     fails = df[df["status"] == "FAILS_TRIGGER"].copy()
@@ -75,21 +63,7 @@ def make_assessable(df):
 
 
 def count_columns(df_full):
-    """
-    Mutually exclusive partition of all patches (deduplicated by slug when present):
-
-      Total   = Assessable + NO_MUT + Non-OK   (always)
-
-      Assessable – OK with mutants + FAILS_TRIGGER  (used for AUC)
-      NO_MUT     – OK rows that produced no mutants
-      Non-OK     – everything else (compile fail, timeout, unknown status, etc.)
-
-    When a 'slug' column exists, duplicate slug rows are collapsed to one per slug
-    (priority: OK > FAILS_TRIGGER > anything else) so Total = unique bug count.
-    """
     if "slug" in df_full.columns:
-        # Assign priority so we keep the most informative row per slug:
-        # OK=0, FAILS_TRIGGER=1, anything else=2
         def status_priority(s):
             if s == "OK":             return 0
             if s == "FAILS_TRIGGER":  return 1
@@ -127,18 +101,14 @@ def bootstrap_ci(y, s, n=10_000, seed=42):
 
 
 def mcc_at_threshold(df, threshold=0.5):
-    """MCC at fixed threshold: predict overfitting (y=1) when PReMSc < threshold."""
     y_pred = (df["prmsc"].values < threshold).astype(int)
     return matthews_corrcoef(df["y"].values, y_pred)
 
 
 def mannwhitney_p(y, s):
-    """One-sided Mann-Whitney U test: H1: correct patches have higher PReMSc than overfitting.
-    y=1 → overfitting, y=0 → correct; PReMSc is negated for AUC so un-negate here."""
-    prmsc       = -s          # restore original PReMSc (was negated for AUC)
+    prmsc       = -s
     correct     = prmsc[y == 0]
     overfitting = prmsc[y == 1]
-    # H1: correct > overfitting  →  alternative='greater' on (correct, overfitting)
     _, p = mannwhitneyu(correct, overfitting, alternative="greater")
     return p
 
@@ -158,7 +128,6 @@ if __name__ == "__main__":
         df      = make_assessable(df_full)
         name    = path.split("/")[-1].split("\\")[-1]
 
-        # remove mislabeled llama patches if columns exist
         if "bug_id" in df.columns and "patch_file" in df.columns:
             mask = df.apply(
                 lambda r: r["label"] == "overfitting"
@@ -190,6 +159,3 @@ if __name__ == "__main__":
               f"{auc:>6.3f}  [{lo:.3f}, {hi:.3f}]  {p_str:>7}  {mcc_str}")
 
     print()
-
-
-    # python compute_auc.py csv\wang_prms_results.csv csv\prism_prms_results.csv csv\repairllama_prms_results.csv csv\srepair_prms_results.csv csv\d4c_prms_results.csv
