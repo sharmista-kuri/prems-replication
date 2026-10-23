@@ -21,13 +21,7 @@ Every folder has its own README with full instructions.
 ## How to reproduce
 
 1. **Run the experiments.** Each `*-prms-experiment/` folder ships a dev container with Java 11, Defects4J, PIT, and JaCoCo. To use it you need Docker Desktop and VS Code with the Dev Containers extension. Open the folder, choose **Reopen in Container**, and then run the commands in that folder's README. 
-2. **Compute the results.** Go to `Calculations/` (you need Python 3.9 or later):
-   ```bash
-   pip install pandas numpy scikit-learn scipy matplotlib
-   python compute_auc.py
-   python compute_baseline_auc.py
-   python prms_roc_curves_v2.py
-   ```
+2. **Compute the results.** Follow the instructions in `Calculations/README.md`.
 3. **APCA comparison.** Run the notebooks and scripts in each subfolder of `APCA Tools/`.
 
 
